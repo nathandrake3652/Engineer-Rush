@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://335464i2lul6"]
+
+[ext_resource type="Script" path="res://Jugador.gd" id="1_axtgx"]
+[ext_resource type="PackedScene" uid="uid://bsfkye1pc7ink" path="res://controlador_terreno.tscn" id="2_118bu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g7y03"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_y2o8f"]
+sky_material = SubResource("ProceduralSkyMaterial_g7y03")
+
+[sub_resource type="Environment" id="Environment_t7rrl"]
+background_mode = 2
+sky = SubResource("Sky_y2o8f")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmeen"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_60cd7"]
+
+[node name="Mundo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t7rrl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Jugador" type="CharacterBody3D" parent="."]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.001, 1.05, -0.005)
+script = ExtResource("1_axtgx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jugador"]
+shape = SubResource("CapsuleShape3D_fmeen")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jugador"]
+mesh = SubResource("CapsuleMesh_60cd7")
+
+[node name="Camera3Dz" type="Camera3D" parent="Jugador"]
+transform = Transform3D(0.769161, -0.00846807, 0.00598068, 0.00559222, 0.712564, 0.289719, -0.00872948, -0.28965, 0.712561, 0.174791, 1.64608, 2.20848)
+fov = 64.0
+
+[node name="Controlador_Terreno" parent="." instance=ExtResource("2_118bu")]
