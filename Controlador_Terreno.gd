@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _init_blocks(number_of_blocks: int) -> void:
-	for block_index in number_of_blocks:
+	for block_index in range(number_of_blocks):
 		var block = TerrainBlocks.pick_random().instantiate()
 		if block_index == 0:
 			block.position.z = block.mesh.size.y/2

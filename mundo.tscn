@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://335464i2lul6"]
+[gd_scene load_steps=9 format=3 uid="uid://335464i2lul6"]
 
 [ext_resource type="Script" path="res://Jugador.gd" id="1_axtgx"]
 [ext_resource type="PackedScene" uid="uid://bsfkye1pc7ink" path="res://controlador_terreno.tscn" id="2_118bu"]
@@ -19,6 +19,8 @@ glow_enabled = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmeen"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_60cd7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0drn"]
 
 [node name="Mundo" type="Node3D"]
 
@@ -43,4 +45,11 @@ mesh = SubResource("CapsuleMesh_60cd7")
 transform = Transform3D(0.769161, -0.00846807, 0.00598068, 0.00559222, 0.712564, 0.289719, -0.00872948, -0.28965, 0.712561, 0.174791, 1.64608, 2.20848)
 fov = 64.0
 
+[node name="Area3D" type="Area3D" parent="Jugador"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jugador/Area3D"]
+shape = SubResource("CapsuleShape3D_b0drn")
+
 [node name="Controlador_Terreno" parent="." instance=ExtResource("2_118bu")]
+
+[connection signal="body_entered" from="Jugador/Area3D" to="Jugador" method="_on_area_3d_body_entered"]

@@ -16,6 +16,7 @@ mesh = SubResource("PlaneMesh_wwdcc")
 
 [node name="bloque_0" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125612, 0.5, 1.89552)
+metadata/Gameover = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_0"]
 shape = SubResource("BoxShape3D_2gpoa")
@@ -25,6 +26,7 @@ mesh = SubResource("BoxMesh_kq263")
 
 [node name="bloque_1" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14605, 0.500001, 6.1288)
+metadata/Gameover = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_1"]
 shape = SubResource("BoxShape3D_2gpoa")
@@ -34,6 +36,7 @@ mesh = SubResource("BoxMesh_kq263")
 
 [node name="bloque_2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67736, 0.499999, -4.31444)
+metadata/Gameover = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_2"]
 shape = SubResource("BoxShape3D_2gpoa")
