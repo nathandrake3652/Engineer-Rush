@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://335464i2lul6"]
+[gd_scene load_steps=7 format=3 uid="uid://335464i2lul6"]
 
-[ext_resource type="Script" path="res://Jugador.gd" id="1_axtgx"]
+[ext_resource type="PackedScene" uid="uid://dui3g4vdt88p1" path="res://player.tscn" id="2_45mye"]
 [ext_resource type="PackedScene" uid="uid://bsfkye1pc7ink" path="res://controlador_terreno.tscn" id="2_118bu"]
+[ext_resource type="Script" path="res://player.gd" id="3_dm4eq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g7y03"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,12 +17,6 @@ sky = SubResource("Sky_y2o8f")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmeen"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_60cd7"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0drn"]
-
 [node name="Mundo" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -31,25 +26,7 @@ environment = SubResource("Environment_t7rrl")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Jugador" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.001, 1.05, -0.005)
-script = ExtResource("1_axtgx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Jugador"]
-shape = SubResource("CapsuleShape3D_fmeen")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Jugador"]
-mesh = SubResource("CapsuleMesh_60cd7")
-
-[node name="Camera3Dz" type="Camera3D" parent="Jugador"]
-transform = Transform3D(0.769161, -0.00846807, 0.00598068, 0.00559222, 0.712564, 0.289719, -0.00872948, -0.28965, 0.712561, 0.174791, 1.64608, 2.20848)
-fov = 64.0
-
-[node name="Area3D" type="Area3D" parent="Jugador"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Jugador/Area3D"]
-shape = SubResource("CapsuleShape3D_b0drn")
-
 [node name="Controlador_Terreno" parent="." instance=ExtResource("2_118bu")]
 
-[connection signal="body_entered" from="Jugador/Area3D" to="Jugador" method="_on_area_3d_body_entered"]
+[node name="player" parent="." instance=ExtResource("2_45mye")]
+script = ExtResource("3_dm4eq")
