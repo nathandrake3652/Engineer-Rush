@@ -1,50 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://oovcdr5ay2le"]
+[gd_scene load_steps=8 format=3 uid="uid://oovcdr5ay2le"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wwdcc"]
-size = Vector2(100, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2gpoa"]
+size = Vector2(100, 26)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kq263"]
+size = Vector3(4.7, 4, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fknpj"]
+points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bqa7q"]
+points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sobci"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ohjqs"]
+points = PackedVector3Array(1.5, 0.65, 0.5, 1.5, 0.65, -0.5, -1.5, 0.65, 0.5, 1.5, -0.65, 0.5, 1.5, -0.65, -0.5, -1.5, 0.65, -0.5, -1.5, -0.65, 0.5, -1.5, -0.65, -0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nelot"]
 data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0, -10, 50, 0, -10)
 
 [node name="Terreno_0" type="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00918388, -0.0637169, -8.52457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151844, -0.00408937, -7.89975)
 mesh = SubResource("PlaneMesh_wwdcc")
 
 [node name="bloque_0" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381489, 0.5, 4.41718)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381489, 0.5, 1.23951)
 metadata/Gameover = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_0"]
-shape = SubResource("BoxShape3D_2gpoa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42638, 0)
 mesh = SubResource("BoxMesh_kq263")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42638, 0)
+shape = SubResource("ConvexPolygonShape3D_fknpj")
 
 [node name="bloque_1" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52415, 0.500001, -5.85669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52735, 1.97298, 2.95024)
 metadata/Gameover = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_1"]
-shape = SubResource("BoxShape3D_2gpoa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026907, 9.53674e-07, -1.67603)
 mesh = SubResource("BoxMesh_kq263")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026907, 9.53674e-07, -0.00385284)
+shape = SubResource("ConvexPolygonShape3D_bqa7q")
 
 [node name="bloque_2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74323, 0.5, 3.85896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7045, 0.546901, -0.049634)
 metadata/Gameover = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_2"]
-shape = SubResource("BoxShape3D_2gpoa")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_2"]
-mesh = SubResource("BoxMesh_kq263")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0663943, 0)
+mesh = SubResource("BoxMesh_sobci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0663943, 0)
+shape = SubResource("ConvexPolygonShape3D_ohjqs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.32, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_nelot")

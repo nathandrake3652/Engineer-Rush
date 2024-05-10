@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 60.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5
 const MAX_VELOCITY_X = 20.0
 const DISTANCE_POSITION = 4.0
 const CENTER_POSITION = 0.0
