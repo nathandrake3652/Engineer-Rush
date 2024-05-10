@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy2kcu2q3a062"]
+
+[ext_resource type="Script" path="res://niveles/nivel 1.gd" id="1_45vs2"]
+[ext_resource type="PackedScene" uid="uid://fdf2jjxjq1p7" path="res://Terrenos/terreno_0.tscn" id="2_txjij"]
+[ext_resource type="PackedScene" uid="uid://dmyrceiqgte61" path="res://Terrenos/terreno_01.tscn" id="3_de5ba"]
+[ext_resource type="PackedScene" uid="uid://bcy88q8sf4n8e" path="res://Terrenos/terreno_02.tscn" id="4_6l63b"]
+[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03.tscn" id="5_daqbr"]
+[ext_resource type="PackedScene" uid="uid://b67sljv8kkyfs" path="res://Terrenos/terreno_05.tscn" id="6_wnemp"]
+
+[sub_resource type="Environment" id="Environment_8q1dw"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.996891, 0.0776564, 0.0133484, 0.0781191, 0.951906, 0.296265, 0.0103004, 0.296387, -0.955013, -0.0111541, 9.05761, -0.796998)
+fov = 48.6093
+
+[node name="nivel 1" type="Node3D" parent="."]
+script = ExtResource("1_45vs2")
+escenas = Array[PackedScene]([ExtResource("2_txjij"), ExtResource("3_de5ba"), ExtResource("4_6l63b"), ExtResource("5_daqbr"), ExtResource("6_wnemp")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8q1dw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.9823, 7.31871e-09, 0.187313, 0.172508, -0.389654, 0.904661, 0.0729872, 0.920961, 0.382758, -0.0504959, 8.86339, 1.67507)
