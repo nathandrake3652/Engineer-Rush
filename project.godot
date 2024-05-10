@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Engineer Rush"
-run/main_scene="res://mundo.tscn"
+run/main_scene="res://menu principal/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
