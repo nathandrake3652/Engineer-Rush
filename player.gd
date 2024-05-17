@@ -20,11 +20,11 @@ func _physics_process(delta):
 	elif player_position_x == RIGHT_POSITION \
 		and Input.is_action_just_pressed("ui_left"):
 			player_position_x = CENTER_POSITION
-	elif Input.is_action_just_pressed("ui_left"):
+	elif Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_left_wasd"):
 		player_position_x = LEFT_POSITION
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_right_wasd"):
 		player_position_x = RIGHT_POSITION
-	elif Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	elif Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_accept_wasd") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	position.x = move_toward(position.x, player_position_x, SPEED * delta)
