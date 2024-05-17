@@ -42,7 +42,7 @@ func _progress_terrain(delta: float) -> void:
 	for block in terrain_belt:
 		block.position.z += terrain_velocity * delta
 
-	"""if terrain_belt[0].position.z >= terrain_belt[0].mesh.size.y/2:
+	if terrain_belt[0].position.z >= terrain_belt[0].mesh.size.y/2:
 		var last_terrain = terrain_belt[-1]
 		var first_terrain = terrain_belt.pop_front()
 
@@ -51,7 +51,7 @@ func _progress_terrain(delta: float) -> void:
 		add_child(block)
 		terrain_belt.append(block)
 		first_terrain.queue_free()
-"""
+
 
 func _append_to_far_edge(target_block: MeshInstance3D, appending_block: MeshInstance3D) -> void:
 	appending_block.position.z = target_block.position.z - target_block.mesh.size.y/2 - appending_block.mesh.size.y/2
