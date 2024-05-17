@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dy2kcu2q3a062"]
 
 [ext_resource type="Script" path="res://niveles/nivel 1.gd" id="1_45vs2"]
-[ext_resource type="PackedScene" uid="uid://fdf2jjxjq1p7" path="res://Terrenos/terreno_0.tscn" id="2_txjij"]
-[ext_resource type="PackedScene" uid="uid://dmyrceiqgte61" path="res://Terrenos/terreno_01.tscn" id="3_de5ba"]
-[ext_resource type="PackedScene" uid="uid://bcy88q8sf4n8e" path="res://Terrenos/terreno_02.tscn" id="4_6l63b"]
+[ext_resource type="PackedScene" uid="uid://fdf2jjxjq1p7" path="res://TerrenosBase/terreno_0.tscn" id="2_txjij"]
+[ext_resource type="PackedScene" uid="uid://dmyrceiqgte61" path="res://TerrenosBase/terreno_01.tscn" id="3_de5ba"]
+[ext_resource type="PackedScene" uid="uid://bcy88q8sf4n8e" path="res://TerrenosBase/terreno_02.tscn" id="4_6l63b"]
 [ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03.tscn" id="5_daqbr"]
-[ext_resource type="PackedScene" uid="uid://b67sljv8kkyfs" path="res://Terrenos/terreno_05.tscn" id="6_wnemp"]
+[ext_resource type="PackedScene" uid="uid://b67sljv8kkyfs" path="res://TerrenosBase/terreno_05.tscn" id="6_wnemp"]
 
 [sub_resource type="Environment" id="Environment_8q1dw"]
 

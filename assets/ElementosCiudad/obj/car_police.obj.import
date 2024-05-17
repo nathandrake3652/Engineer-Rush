@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvb1cputrefxn"
+path="res://.godot/imported/car_police.obj-9b0a6722665d856a62fce53e26102b03.mesh"
+
+[deps]
+
+files=["res://.godot/imported/car_police.obj-9b0a6722665d856a62fce53e26102b03.mesh"]
+
+source_file="res://assets/ElementosCiudad/obj/car_police.obj"
+dest_files=["res://.godot/imported/car_police.obj-9b0a6722665d856a62fce53e26102b03.mesh", "res://.godot/imported/car_police.obj-9b0a6722665d856a62fce53e26102b03.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4wwo2s5aa8kd"
+path="res://.godot/imported/car_hatchback.obj-cfecd1adadb97d516f08841147fa726c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/car_hatchback.obj-cfecd1adadb97d516f08841147fa726c.mesh"]
+
+source_file="res://assets/ElementosCiudad/obj/car_hatchback.obj"
+dest_files=["res://.godot/imported/car_hatchback.obj-cfecd1adadb97d516f08841147fa726c.mesh", "res://.godot/imported/car_hatchback.obj-cfecd1adadb97d516f08841147fa726c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

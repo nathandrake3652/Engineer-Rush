@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dp2n3qoxnprdq"
+path="res://.godot/imported/building_C.obj-b9dceca087a90fbd3c9650d9cad0fd54.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_C.obj-b9dceca087a90fbd3c9650d9cad0fd54.mesh"]
+
+source_file="res://assets/ElementosCiudad/obj/building_C.obj"
+dest_files=["res://.godot/imported/building_C.obj-b9dceca087a90fbd3c9650d9cad0fd54.mesh", "res://.godot/imported/building_C.obj-b9dceca087a90fbd3c9650d9cad0fd54.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
