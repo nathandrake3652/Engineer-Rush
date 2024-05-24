@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dy2kcu2q3a062"]
 
-[ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_0D.tscn" id="1_tkdgt"]
-[ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_01n.tscn" id="2_e3nwr"]
-[ext_resource type="PackedScene" uid="uid://cdpgojnelp7p6" path="res://Terrenos/terreno_02n.tscn" id="3_mto0t"]
-[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03.tscn" id="5_daqbr"]
-[ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05n.tscn" id="5_ra1bw"]
+[ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_01large.tscn" id="1_tkdgt"]
+[ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_02large.tscn" id="2_e3nwr"]
+[ext_resource type="PackedScene" uid="uid://cdpgojnelp7p6" path="res://Terrenos/terreno_04large.tscn" id="3_lkumd"]
+[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03large.tscn" id="5_daqbr"]
+[ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05large.tscn" id="5_ra1bw"]
 
 [sub_resource type="GDScript" id="GDScript_5qw8i"]
 script/source = "extends Node3D
@@ -13,14 +13,14 @@ script/source = "extends Node3D
 
 var amount = 20
 var rng = RandomNumberGenerator.new()
-var offset = 25.7
+var offset = 50
 func _ready():
 	for n in amount:
 		spawnescena(n*offset)
 
 
-func _process(delta):
-	pass
+'func _process(delta):
+	pass'
 func spawnescena(n):
 	rng.randomize()
 	var num = rng.randi_range(0, escenas.size()-1)
@@ -46,7 +46,7 @@ fov = 48.6093
 
 [node name="nivel_1" type="Node3D" parent="."]
 script = SubResource("GDScript_5qw8i")
-escenas = Array[PackedScene]([ExtResource("1_tkdgt"), ExtResource("2_e3nwr"), ExtResource("3_mto0t"), ExtResource("5_daqbr"), ExtResource("5_ra1bw")])
+escenas = Array[PackedScene]([ExtResource("1_tkdgt"), ExtResource("2_e3nwr"), ExtResource("3_lkumd"), ExtResource("5_daqbr"), ExtResource("5_ra1bw")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8q1dw")
