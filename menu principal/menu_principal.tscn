@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxk0ksf6dsbue"]
+[gd_scene load_steps=3 format=3 uid="uid://bxk0ksf6dsbue"]
 
 [ext_resource type="Script" path="res://menu principal/menu_principal.gd" id="1_f88hq"]
-[ext_resource type="Texture2D" uid="uid://becd1m33u8ii0" path="res://assets/extras/aaaa.jpg" id="1_t0igr"]
-
-[sub_resource type="SystemFont" id="SystemFont_fqo2x"]
-font_names = PackedStringArray("Dubai")
+[ext_resource type="Texture2D" uid="uid://b1ed24hyymx5n" path="res://assets/extras/Fondo_de_inicio_Engineer_Rush.jpg" id="2_kuso2"]
 
 [node name="menu_principal" type="Control"]
 layout_mode = 3
@@ -22,7 +19,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_t0igr")
+texture = ExtResource("2_kuso2")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -45,7 +43,6 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = SubResource("SystemFont_fqo2x")
 theme_override_font_sizes/font_size = 70
 text = "Engineer Rush"
 horizontal_alignment = 1
