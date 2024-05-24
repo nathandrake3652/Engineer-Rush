@@ -1,5 +1,5 @@
 extends Node3D
-class_name TerrainController
+'class_name TerrainController
 ## This builds and operates the terrain "conveyor belt"
 ##
 ## A set of randomly choosen terrain blocks is rendered to the viewport.
@@ -40,9 +40,9 @@ func _init_blocks(number_of_blocks: int) -> void:
 
 func _progress_terrain(delta: float) -> void:
 	for block in terrain_belt:
-		block.position.z += terrain_velocity * delta
+		block.position.z += terrain_velocity * delta*1.1
 
-	if terrain_belt[0].position.z >= terrain_belt[0].mesh.size.y/2:
+	if terrain_belt[0].position.z >= terrain_belt[0].mesh.size.y/1.9:
 		var last_terrain = terrain_belt[-1]
 		var first_terrain = terrain_belt.pop_front()
 
@@ -62,3 +62,4 @@ func _load_terrain_scenes(target_path: String) -> void:
 	for scene_path in dir.get_files():
 		print("Loading terrian block scene: " + target_path + "/" + scene_path)
 		TerrainBlocks.append(load(target_path + "/" + scene_path))
+'

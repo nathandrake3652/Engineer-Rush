@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c552gs5aor5os"]
+[gd_scene load_steps=14 format=3 uid="uid://c552gs5aor5os"]
 
+[ext_resource type="Script" path="res://Terrenos/Terrenos.gd" id="1_fv6xb"]
 [ext_resource type="ArrayMesh" uid="uid://bt4v7jnqxbaw2" path="res://assets/ElementosCiudad/obj/car_stationwagon.obj" id="1_likfd"]
 [ext_resource type="PackedScene" uid="uid://bpoqqddudwas4" path="res://assets/ElementosCiudad/obj/StraightRoad1.gltf" id="2_afurm"]
 [ext_resource type="ArrayMesh" uid="uid://bkql0ay5m3k6w" path="res://assets/ElementosCiudad/obj/building_F.obj" id="3_38g3r"]
@@ -28,6 +29,7 @@ points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35
 [node name="Terreno_0" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00918388, -0.0637169, -8.52457)
 mesh = SubResource("PlaneMesh_wwdcc")
+script = ExtResource("1_fv6xb")
 
 [node name="bloque_0" type="StaticBody3D" parent="."]
 transform = Transform3D(1.33442, 0, 0, 0, 1.33442, 0, 0, 0, 1.33442, 0.491145, 0.5, -5.12596)

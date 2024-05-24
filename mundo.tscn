@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://335464i2lul6"]
+[gd_scene load_steps=8 format=3 uid="uid://335464i2lul6"]
 
 [ext_resource type="PackedScene" uid="uid://dui3g4vdt88p1" path="res://player.tscn" id="2_45mye"]
 [ext_resource type="PackedScene" uid="uid://bsfkye1pc7ink" path="res://controlador_terreno.tscn" id="2_118bu"]
 [ext_resource type="Script" path="res://player.gd" id="3_dm4eq"]
+[ext_resource type="PackedScene" uid="uid://d2mivm2k44k2l" path="res://niveles/node_inf.tscn" id="4_y4uni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g7y03"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,10 +24,13 @@ glow_enabled = true
 environment = SubResource("Environment_t7rrl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(0.876281, 0.417251, -0.2409, 1.54176e-08, 0.5, 0.866026, 0.4818, -0.758882, 0.43814, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Controlador_Terreno" parent="." instance=ExtResource("2_118bu")]
 
 [node name="player" parent="." instance=ExtResource("2_45mye")]
+transform = Transform3D(-0.999782, 0, -0.02089, 0, 1, 0, 0.02089, 0, -0.999782, 0, 0, 0)
 script = ExtResource("3_dm4eq")
+
+[node name="Node3D" parent="." instance=ExtResource("4_y4uni")]

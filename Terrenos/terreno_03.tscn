@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://oovcdr5ay2le"]
+[gd_scene load_steps=19 format=3 uid="uid://oovcdr5ay2le"]
 
 [ext_resource type="ArrayMesh" uid="uid://di8rf427uish2" path="res://assets/ElementosCiudad/obj/car_taxi.obj" id="1_1rrph"]
+[ext_resource type="Script" path="res://Terrenos/Terrenos.gd" id="1_4pcge"]
 [ext_resource type="ArrayMesh" uid="uid://dvb1cputrefxn" path="res://assets/ElementosCiudad/obj/car_police.obj" id="1_ee71t"]
 [ext_resource type="ArrayMesh" uid="uid://400nj2ry4j5m" path="res://assets/ElementosCiudad/obj/car_sedan.obj" id="2_gtb6m"]
 [ext_resource type="PackedScene" uid="uid://bpoqqddudwas4" path="res://assets/ElementosCiudad/obj/StraightRoad1.gltf" id="2_m751o"]
@@ -31,6 +32,7 @@ data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0,
 [node name="Terreno_0" type="MeshInstance3D"]
 transform = Transform3D(1.00195, 0, 0, 0, 1.00195, 0, 0, 0, 1.04394, -0.0151844, -0.00408937, -7.89975)
 mesh = SubResource("PlaneMesh_wwdcc")
+script = ExtResource("1_4pcge")
 
 [node name="Police Car" type="StaticBody3D" parent="."]
 transform = Transform3D(0.689482, 0, 0, 0, 0.981263, 0, 0, 0, 0.540308, 0.421288, 0.541016, -5.34404)
