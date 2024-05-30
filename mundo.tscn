@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://335464i2lul6"]
 
-[ext_resource type="PackedScene" uid="uid://ga4g1palva5n" path="res://player.tscn" id="2_45mye"]
+[ext_resource type="PackedScene" uid="uid://dui3g4vdt88p1" path="res://player.tscn" id="2_45mye"]
 [ext_resource type="PackedScene" uid="uid://bsfkye1pc7ink" path="res://controlador_terreno.tscn" id="2_118bu"]
 [ext_resource type="Script" path="res://player.gd" id="3_dm4eq"]
 [ext_resource type="PackedScene" uid="uid://d2mivm2k44k2l" path="res://niveles/node_inf.tscn" id="4_y4uni"]

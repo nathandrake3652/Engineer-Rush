@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_01large.tscn" id="1_unm34"]
 [ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_02large.tscn" id="2_gyhc5"]
 [ext_resource type="PackedScene" uid="uid://cdpgojnelp7p6" path="res://Terrenos/terreno_04large.tscn" id="3_j6vjq"]
-[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03small.tscn" id="4_0fvpn"]
-[ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05n.tscn" id="5_je1sh"]
+[ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05large.tscn" id="4_38qj3"]
+[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03large.tscn" id="5_iptcf"]
 [ext_resource type="PackedScene" uid="uid://dmwin7eipuq23" path="res://menu_pausa.tscn" id="6_jqaew"]
 
 [sub_resource type="GDScript" id="GDScript_5qw8i"]
@@ -16,16 +16,22 @@ var paused = false
 
 var amount = 20
 var rng = RandomNumberGenerator.new()
-var offset = 50
+var offset = 35
 func _ready():
 	for n in amount:
 		spawnescena(n*offset)
+		menu_pausa.hide()
 
-'''
+func spawnescena(n):
+	rng.randomize()
+	var num = rng.randi_range(0, escenas.size()-1)
+	var instanciar = escenas[num].instantiate()
+	instanciar.position.z =n
+	add_child(instanciar)
+	
 func _process(delta):
 	if Input.is_action_just_pressed(\"pausa\"):
 		pauseMenu()
-		
 func pauseMenu():
 	if paused:
 		menu_pausa.hide()
@@ -34,15 +40,6 @@ func pauseMenu():
 		menu_pausa.show()
 		Engine.time_scale = 0
 	paused = !paused
-	
-'''
-func spawnescena(n):
-	rng.randomize()
-	var num = rng.randi_range(0, escenas.size()-1)
-	var instanciar = escenas[num].instantiate()
-	instanciar.position.z =n
-	add_child(instanciar)
-	
 "
 
 [sub_resource type="Environment" id="Environment_8q1dw"]
@@ -56,7 +53,7 @@ fov = 48.6093
 
 [node name="nivel_1" type="Node3D" parent="."]
 script = SubResource("GDScript_5qw8i")
-escenas = Array[PackedScene]([ExtResource("1_unm34"), ExtResource("2_gyhc5"), ExtResource("3_j6vjq"), ExtResource("4_0fvpn"), ExtResource("5_je1sh")])
+escenas = Array[PackedScene]([ExtResource("1_unm34"), ExtResource("2_gyhc5"), ExtResource("3_j6vjq"), ExtResource("4_38qj3"), ExtResource("5_iptcf")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8q1dw")
@@ -65,4 +62,3 @@ environment = SubResource("Environment_8q1dw")
 transform = Transform3D(-0.9823, 7.31871e-09, 0.187313, 0.172508, -0.389654, 0.904661, 0.0729872, 0.920961, 0.382758, -0.0504959, 8.86339, 1.67507)
 
 [node name="MenuPausa" parent="." instance=ExtResource("6_jqaew")]
-visible = false
