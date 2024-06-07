@@ -37,11 +37,12 @@ points = PackedVector3Array(1.5, 0.65, 0.5, 1.5, 0.65, -0.5, -1.5, 0.65, 0.5, 1.
 points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
 
 [node name="Terreno_0" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("PlaneMesh_wwdcc")
 script = ExtResource("1_ots7c")
 
 [node name="Green Car" type="StaticBody3D" parent="."]
-transform = Transform3D(1.33442, 0, 0, 0, 1.33442, 0, 0, 0, 1.30071, 0, 0.5, 7.5334)
+transform = Transform3D(1.33442, 0, 0, 0, 1.33442, 0, 0, 0, 1.30071, 0, 0.5, 7.533)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Green Car"]
@@ -64,15 +65,15 @@ transform = Transform3D(-1.73639e-07, 0, 3.97241, 0, 3.97241, 0, -3.97241, 0, -1
 mesh = ExtResource("2_m2i54")
 
 [node name="BuildingH" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.68073e-07, 0, -3.84507, 0, 3.84507, 0, 3.84507, 0, -1.68073e-07, 11.7785, -0.232756, 9.12002)
+transform = Transform3D(-1.68073e-07, 0, -3.84507, 0, 3.84507, 0, 3.84507, 0, -1.68073e-07, 11.7785, -0.232756, 9.77606)
 mesh = ExtResource("3_0fnb1")
 
 [node name="BuildingD" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.57848e-07, 0, -3.61114, 0, 3.61114, 0, 3.61114, 0, -1.57848e-07, 11.3826, -0.288558, 0.340454)
+transform = Transform3D(-1.57848e-07, 0, -3.61114, 0, 3.61114, 0, 3.61114, 0, -1.57848e-07, 11.3826, -0.288558, 1.56326)
 mesh = ExtResource("4_eqtw4")
 
 [node name="BuildingC2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00807207, 0, -4.96042, 0, 4.96249, 0, 4.53441, 0, -0.00883045, 12.8803, -0.412137, 18.863)
+transform = Transform3D(-0.00807207, 0, -4.96042, 0, 4.96249, 0, 4.53441, 0, -0.00883045, 12.8803, -0.412137, 19.2706)
 mesh = ExtResource("5_ddho7")
 
 [node name="BuildingC3" type="MeshInstance3D" parent="."]
@@ -124,7 +125,7 @@ transform = Transform3D(0.962503, 0, 0, 0, 0.43967, 0, 0, 0, 0.423368, 0.0279689
 shape = SubResource("ConvexPolygonShape3D_spyt5")
 
 [node name="Road" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.964, 0, -0.045, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.964, 0, 0, 0.9)
 
 [node name="StraightRoad1" parent="Road" instance=ExtResource("9_fwntm")]
 transform = Transform3D(3.38, 0, 0, 0, 2.157, 0, 0, 0, 6.82, 0, -1.093, 12.025)
@@ -165,7 +166,7 @@ transform = Transform3D(0.891446, 0, 0, 0, 1, 0, 0, 0, 1.33814, -0.159839, -0.06
 shape = SubResource("ConvexPolygonShape3D_c6vne")
 
 [node name="Taxi" type="StaticBody3D" parent="."]
-transform = Transform3D(0.732221, 0, 0, 0, 0.987278, 0, 0, 0, 0.976956, 0.162284, 0.541017, -9.27146)
+transform = Transform3D(0.732221, 0, 0, 0, 0.987278, 0, 0, 0, 0.976956, 0, 0.541, -9.271)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Taxi"]
@@ -241,5 +242,9 @@ mesh = ExtResource("7_ncb4v")
 skeleton = NodePath("../CarHatchbackWheelFrontLeft")
 
 [node name="BuildingC4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.48452e-07, 0, -4.95816, 0, 4.96249, 0, 5.68393, 0, -2.16728e-07, 12.8377, -0.412139, -10.654)
+transform = Transform3D(-2.48452e-07, 0, -4.95816, 0, 4.96249, 0, 5.68393, 0, -2.16728e-07, 12.8377, -0.412139, -8.57467)
 mesh = ExtResource("3_0fnb1")
+
+[node name="BuildingC5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.16627e-07, 0, -4.95585, 0, 4.95585, 0, 4.95585, 0, -2.16627e-07, 12.9321, -0.418372, -20.0255)
+mesh = ExtResource("10_nul1k")
