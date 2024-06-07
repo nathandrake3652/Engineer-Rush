@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://oovcdr5ay2le"]
+[gd_scene load_steps=24 format=3 uid="uid://oovcdr5ay2le"]
 
 [ext_resource type="ArrayMesh" uid="uid://di8rf427uish2" path="res://assets/ElementosCiudad/obj/car_taxi.obj" id="1_1rrph"]
 [ext_resource type="ArrayMesh" uid="uid://dvb1cputrefxn" path="res://assets/ElementosCiudad/obj/car_police.obj" id="1_ee71t"]
@@ -10,9 +10,11 @@
 [ext_resource type="ArrayMesh" uid="uid://b4wwo2s5aa8kd" path="res://assets/ElementosCiudad/obj/car_hatchback.obj" id="6_rhpww"]
 [ext_resource type="ArrayMesh" uid="uid://6vgxjpybovwt" path="res://assets/ElementosCiudad/obj/building_E.obj" id="7_ieu8g"]
 [ext_resource type="ArrayMesh" uid="uid://xblktxx3laf0" path="res://assets/ElementosCiudad/obj/building_H.obj" id="8_4n4vs"]
-[ext_resource type="ArrayMesh" uid="uid://cytqrisabs6gj" path="res://assets/ElementosCiudad/obj/trafficlight_C.obj" id="11_7alup"]
 [ext_resource type="ArrayMesh" uid="uid://cr3akhpdvi1fo" path="res://assets/ElementosCiudad/obj/building_B.obj" id="11_ltqkg"]
 [ext_resource type="ArrayMesh" uid="uid://bmpoc7ymy1dvh" path="res://assets/ElementosCiudad/obj/building_D.obj" id="12_1pypn"]
+[ext_resource type="ArrayMesh" uid="uid://bkql0ay5m3k6w" path="res://assets/ElementosCiudad/obj/building_F.obj" id="13_282c3"]
+[ext_resource type="ArrayMesh" uid="uid://dp2n3qoxnprdq" path="res://assets/ElementosCiudad/obj/building_C.obj" id="14_gk61f"]
+[ext_resource type="ArrayMesh" uid="uid://bt4v7jnqxbaw2" path="res://assets/ElementosCiudad/obj/car_stationwagon.obj" id="15_adjeb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wwdcc"]
 size = Vector2(100, 50)
@@ -29,13 +31,22 @@ points = PackedVector3Array(1.5, 0.65, 0.5, 1.5, 0.65, -0.5, -1.5, 0.65, 0.5, 1.
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nelot"]
 data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0, -10, 50, 0, -10)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kvknw"]
+points = PackedVector3Array(1.5, 0.65, 0.5, 1.5, 0.65, -0.5, -1.5, 0.65, 0.5, 1.5, -0.65, 0.5, 1.5, -0.65, -0.5, -1.5, 0.65, -0.5, -1.5, -0.65, 0.5, -1.5, -0.65, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l5bqu"]
+points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jy7a8"]
+points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
+
 [node name="Terreno_0" type="MeshInstance3D"]
-transform = Transform3D(1.00195, 0, 0, 0, 1.00195, 0, 0, 0, 1.04394, 0, 0, 0)
+transform = Transform3D(-1.00195, 0, -9.12641e-08, 0, 1.00195, 0, 8.75932e-08, 0, -1.04394, 0, 0, 0)
 mesh = SubResource("PlaneMesh_wwdcc")
 script = ExtResource("1_iq5tk")
 
 [node name="Police Car" type="StaticBody3D" parent="."]
-transform = Transform3D(0.689482, 0, 0, 0, 0.981263, 0, 0, 0, 0.540308, 0.421288, 0.390822, -5.05746)
+transform = Transform3D(0.689481, 0, -2.84217e-14, 0, 0.981263, 0, 7.10543e-15, 0, 0.540308, 0.0287592, 0.390822, 4.68344)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Police Car"]
@@ -67,7 +78,7 @@ mesh = ExtResource("2_pvx68")
 skeleton = NodePath("../CarHatchbackWheelFrontLeft")
 
 [node name="bloque_1" type="StaticBody3D" parent="."]
-transform = Transform3D(0.63016, 0, 0, 0, 0.975847, 0, 0, 0, 0.873789, -3.38492, 2.014, -3.56498)
+transform = Transform3D(0.630159, 0, -6.39488e-14, 0, 0.975847, 0, -7.10543e-15, 0, 0.873789, -3.72797, 2.014, 6.17592)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_1"]
@@ -78,8 +89,28 @@ mesh = ExtResource("2_gtb6m")
 transform = Transform3D(1.01026, 0, 0, 0, 0.486793, 0, 0, 0, 0.504326, 0.0279689, -0.809192, -1.6859)
 shape = SubResource("ConvexPolygonShape3D_bqa7q")
 
+[node name="CarHatchbackWheelFrontLeft5" type="MeshInstance3D" parent="bloque_1"]
+transform = Transform3D(6.18997, 0, 2.27374e-13, 0, 4.98737, 0, 8.52651e-14, 0, 5.22283, 0.832581, -1.62, -1.63091)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft6" type="MeshInstance3D" parent="bloque_1"]
+transform = Transform3D(5.32209, 0, 5.11591e-13, 0, 4.97267, 0, -2.84217e-14, 0, 5.2538, 1.02102, -1.61794, -4.35234)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
+
+[node name="CarHatchbackWheelFrontLeft7" type="MeshInstance3D" parent="bloque_1"]
+transform = Transform3D(-6.18997, 0, -6.3312e-07, 0, 4.98737, 0, 3.90262e-07, 0, -5.22283, -0.570842, -1.62, 0.92788)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft8" type="MeshInstance3D" parent="bloque_1"]
+transform = Transform3D(-5.32208, 0, -6.36874e-07, 0, 4.97267, 0, 3.35546e-07, 0, -5.2538, -0.705696, -1.61794, -1.78494)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
+
 [node name="Dumpster" type="StaticBody3D" parent="."]
-transform = Transform3D(0.863567, 0, 0, 0, 0.999996, 0, 0, 0, 0.885614, 4.32001, 0.587919, -6.16567)
+transform = Transform3D(0.941161, 0, -8.52651e-14, 0, 1.08985, 0, -2.13163e-14, 0, 0.96519, 3.79718, 0.587918, 3.57523)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Dumpster"]
@@ -98,7 +129,7 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 2.53936, 0, 0, 12.
 shape = SubResource("ConcavePolygonShape3D_nelot")
 
 [node name="Red Car" type="StaticBody3D" parent="."]
-transform = Transform3D(0.644531, 0, 0, 0, 0.960655, 0, 0, 0, 0.967271, -3.39313, 2.014, 7.15916)
+transform = Transform3D(0.64453, 0, -5.68434e-14, 0, 0.960655, 0, -1.77636e-14, 0, 0.967271, -3.79322, 2.014, 16.8515)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Red Car"]
@@ -130,7 +161,7 @@ mesh = ExtResource("2_pvx68")
 skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
 
 [node name="Taxi" type="StaticBody3D" parent="."]
-transform = Transform3D(0.732221, 0, 0, 0, 1.00922, 0, 0, 0, 0.859166, 4.02714, 0.541017, 5.60826)
+transform = Transform3D(0.732221, 0, -5.68434e-14, 0, 1.00922, 0, 0, 0, 0.859166, 3.70376, 0.541017, 15.3006)
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Taxi"]
@@ -141,61 +172,41 @@ mesh = ExtResource("1_1rrph")
 transform = Transform3D(0.689934, 0, 0, 0, 0.447542, 0, 0, 0, 0.454117, 0, 0.735311, 0)
 shape = SubResource("ConvexPolygonShape3D_fknpj")
 
+[node name="CarHatchbackWheelFrontLeft13" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(5.10317, 0, 1.13687e-13, 0, 4.61967, 0, 0, 0, 5.08836, 0.620564, -0.106862, -0.311697)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft14" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(4.38766, 0, 1.13687e-13, 0, 4.60605, 0, -2.84217e-14, 0, 5.11855, 0.767077, -0.10926, -2.92865)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
+
+[node name="CarHatchbackWheelFrontLeft15" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(-5.10316, 0, -5.21959e-07, 0, 4.61967, 0, 3.80215e-07, 0, -5.08836, -0.650828, -0.106862, 2.1273)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft16" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(-4.38766, 0, -5.25053e-07, 0, 4.60605, 0, 3.26908e-07, 0, -5.11855, -0.800169, -0.109738, -0.403762)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
+
 [node name="BuildingC2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00807207, 0, -4.96042, 0, 4.96249, 0, 4.53441, 0, -0.00883045, 13.2391, -0.412137, 7.21776)
+transform = Transform3D(-0.00807205, 0, -4.96042, 0, 4.96248, 0, 4.53441, 0, -0.00883044, 12.9136, -0.390737, -2.61496)
 mesh = ExtResource("7_ieu8g")
 
 [node name="BuildingC3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0101184, 0, -4.95815, 0, 4.96249, 0, 5.68392, 0, -0.0088264, 13.2382, -0.412139, -4.78805)
+transform = Transform3D(-0.0101184, 0, -4.95815, 0, 4.96249, 0, 5.68392, 0, -0.0088264, 12.9226, -0.389448, 18.1626)
 mesh = ExtResource("8_4n4vs")
-
-[node name="TrafficlightC" type="MeshInstance3D" parent="."]
-transform = Transform3D(-9.34424, 0, -0.0659866, 0, 9.3452, 0, 0.133578, 0, -4.61598, -7.02455, -0.012976, 12.6134)
-mesh = ExtResource("11_7alup")
 
 [node name="BuildingB" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.039278, 0, 5.7263, 0, 5.72642, 0, -5.7263, 0, 0.0392781, -13.2247, -0.561812, -5.97014)
 mesh = ExtResource("11_ltqkg")
 
 [node name="BuildingD" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.020592, 0, 5.56523, 0, 5.56526, 0, -5.56524, 0, -0.020592, -13.1088, -0.447763, 6.33346)
+transform = Transform3D(-0.020592, 0, 5.56523, 0, 5.56526, 0, -5.56524, 0, -0.020592, -13.1088, -0.447763, 6.65691)
 mesh = ExtResource("12_1pypn")
-
-[node name="CarHatchbackWheelFrontLeft5" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.90067, 0, 0, 0, 4.86691, 0, 0, 0, 4.56365, -2.86026, 0.433129, -4.99005)
-mesh = ExtResource("2_pvx68")
-
-[node name="CarHatchbackWheelFrontLeft6" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.35377, 0, 0, 0, 4.85256, 0, 0, 0, 4.59071, -2.74151, 0.435137, -7.36801)
-mesh = ExtResource("2_pvx68")
-skeleton = NodePath("../Police Car/CarHatchbackWheelFrontLeft")
-
-[node name="CarHatchbackWheelFrontLeft7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.90067, 0, -3.98966e-07, 0, 4.86691, 0, 3.41007e-07, 0, -4.56365, -3.74464, 0.433128, -2.75421)
-mesh = ExtResource("2_pvx68")
-
-[node name="CarHatchbackWheelFrontLeft8" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.35376, 0, -4.01332e-07, 0, 4.85256, 0, 2.93196e-07, 0, -4.59071, -3.82962, 0.435137, -5.12464)
-mesh = ExtResource("2_pvx68")
-skeleton = NodePath("../Police Car/CarHatchbackWheelFrontLeft")
-
-[node name="CarHatchbackWheelFrontLeft13" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.73665, 0, 0, 0, 4.66226, 0, 0, 0, 4.37175, 4.48153, 0.43317, 5.34046)
-mesh = ExtResource("2_pvx68")
-
-[node name="CarHatchbackWheelFrontLeft14" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.21274, 0, 0, 0, 4.64852, 0, 0, 0, 4.39768, 4.58881, 0.43075, 3.09206)
-mesh = ExtResource("2_pvx68")
-skeleton = NodePath("../Police Car/CarHatchbackWheelFrontLeft")
-
-[node name="CarHatchbackWheelFrontLeft15" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.73664, 0, -3.82189e-07, 0, 4.66226, 0, 3.26668e-07, 0, -4.37175, 3.55059, 0.43317, 7.43596)
-mesh = ExtResource("2_pvx68")
-
-[node name="CarHatchbackWheelFrontLeft16" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.21274, 0, -3.84455e-07, 0, 4.64852, 0, 2.80868e-07, 0, -4.39768, 3.44124, 0.430267, 5.26136)
-mesh = ExtResource("2_pvx68")
-skeleton = NodePath("../Police Car/CarHatchbackWheelFrontLeft")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.962, 0, 0, 1.025)
@@ -205,3 +216,80 @@ transform = Transform3D(3.38, 0, 0, 0, 2.157, 0, 0, 0, 6.82, 0, -1.093, 11.938)
 
 [node name="StraightRoad2" parent="Node3D" instance=ExtResource("2_m751o")]
 transform = Transform3D(3.38, 0, 0, 0, 2.16, 0, 0, 0, 6.838, 0, -1.093, -14.056)
+
+[node name="BuildingC4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.48451e-07, 0, 4.95815, 0, 4.96248, 0, -5.68393, 0, -2.16728e-07, -12.9182, -0.389447, -18.1043)
+mesh = ExtResource("8_4n4vs")
+
+[node name="BuildingF" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7364e-07, 0, -3.97241, 0, 3.97241, 0, 3.97241, 0, -1.73639e-07, 11.9405, -0.288335, 7.29074)
+mesh = ExtResource("13_282c3")
+
+[node name="BuildingD2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.57848e-07, 0, -3.61114, 0, 3.61114, 0, 3.61114, 0, -1.57848e-07, 11.556, -0.331312, -11.9927)
+mesh = ExtResource("12_1pypn")
+
+[node name="BuildingC" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.54602e-07, 0, -3.53687, 0, 3.53687, 0, 3.53687, 0, -1.54602e-07, 11.5247, -0.241003, -19.9471)
+mesh = ExtResource("14_gk61f")
+
+[node name="BuildingC5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.2775e-07, 0, 3.19715, 0, 4.76724, 0, -4.38601, 0, -2.09731e-07, -11.1821, -0.367577, 17.9954)
+mesh = ExtResource("7_ieu8g")
+skeleton = NodePath("../Red Car")
+
+[node name="Green Car" type="StaticBody3D" parent="."]
+transform = Transform3D(1.31344, 0, -4.9738e-14, 0, 1.31344, 0, -3.55271e-14, 0, 1.28026, -0.0713312, 0.499999, -15.3621)
+metadata/Gameover = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Green Car"]
+transform = Transform3D(4.41999, 0, 0, 0, 4.41999, 0, 0, 0, 4.41999, 0.0556448, -0.0781173, 0)
+mesh = ExtResource("15_adjeb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Green Car"]
+transform = Transform3D(0.673347, 0, 0, 0, 2.06415, 0, 0, 0, 3.72691, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_kvknw")
+
+[node name="Police Car2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.689482, 0, -2.4869e-14, 0, 0.981263, 0, 7.10543e-15, 0, 0.540308, 3.66733, 0.541016, -5.54662)
+metadata/Gameover = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Police Car2"]
+transform = Transform3D(8.13175, 0, 0, 0, 5.11715, 0, 0, 0, 8.05126, 0.009022, -0.114256, -0.0177746)
+mesh = ExtResource("1_ee71t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Police Car2"]
+transform = Transform3D(0.689934, 0, 0, 0, 0.51181, 0, 0, 0, 0.687087, 0, 0.735311, 0)
+shape = SubResource("ConvexPolygonShape3D_l5bqu")
+
+[node name="CarHatchbackWheelFrontLeft" type="MeshInstance3D" parent="Police Car2"]
+transform = Transform3D(5.6574, 0, 0, 0, 4.95984, 0, 0, 0, 8.44638, 0.49558, -0.109948, -0.112782)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft2" type="MeshInstance3D" parent="Police Car2"]
+transform = Transform3D(4.86419, 0, 0, 0, 4.94522, 0, 0, 0, 8.49647, 0.66781, -0.107901, -4.17995)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../CarHatchbackWheelFrontLeft")
+
+[node name="CarHatchbackWheelFrontLeft3" type="MeshInstance3D" parent="Police Car2"]
+transform = Transform3D(-5.65739, 0, -5.78647e-07, 0, 4.95984, 0, 6.31135e-07, 0, -8.44638, -0.464229, -0.109948, 3.98853)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft4" type="MeshInstance3D" parent="Police Car2"]
+transform = Transform3D(-4.86419, 0, -5.82078e-07, 0, 4.94522, 0, 5.42646e-07, 0, -8.49647, -0.587475, -0.107901, -0.0786324)
+mesh = ExtResource("2_pvx68")
+skeleton = NodePath("../CarHatchbackWheelFrontLeft")
+
+[node name="Red Car2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.644531, 0, -2.84217e-14, 0, 0.960655, 0, -1.42109e-14, 0, 0.967271, -3.80062, 2.014, -3.99702)
+metadata/Gameover = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Red Car2"]
+transform = Transform3D(9.58447, 0, 0, 0, 5.39041, 0, 0, 0, 5.3904, 0.15478, -1.62264, -1.67603)
+mesh = ExtResource("6_rhpww")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Red Car2"]
+transform = Transform3D(0.962503, 0, 0, 0, 0.43967, 0, 0, 0, 0.423368, 0.0279689, -0.809192, -1.6859)
+shape = SubResource("ConvexPolygonShape3D_jy7a8")
