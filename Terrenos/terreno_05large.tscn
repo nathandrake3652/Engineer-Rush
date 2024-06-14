@@ -250,5 +250,6 @@ transform = Transform3D(-2.16627e-07, 0, -4.95585, 0, 4.95585, 0, 4.95585, 0, -2
 mesh = ExtResource("10_nul1k")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

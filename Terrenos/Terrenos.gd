@@ -8,7 +8,7 @@ extends MeshInstance3D
 #@onready var nivel= $"../" 
 var PowerUps = preload("res://Power ups/PowerUp1.tscn")
 #>>>>>>> Stashed changes
-var velocidad = 10 
+var velocidad = 20 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
