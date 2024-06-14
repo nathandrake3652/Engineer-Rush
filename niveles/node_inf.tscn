@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2mivm2k44k2l"]
+[gd_scene load_steps=17 format=3 uid="uid://d2mivm2k44k2l"]
 
 [ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_01large.tscn" id="1_unm34"]
 [ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_02large.tscn" id="2_gyhc5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdpgojnelp7p6" path="res://Terrenos/terreno_04large.tscn" id="3_j6vjq"]
 [ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05large.tscn" id="5_lhk1j"]
 [ext_resource type="PackedScene" uid="uid://dmwin7eipuq23" path="res://menu_pausa.tscn" id="6_jqaew"]
+[ext_resource type="Script" path="res://scripts/score/ScoreNumber.gd" id="7_kh281"]
 
 [sub_resource type="GDScript" id="GDScript_5qw8i"]
 script/source = "extends Node3D
@@ -29,7 +30,7 @@ func spawnescena(n):
 	instanciar.position.z =n
 	add_child(instanciar)
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed(\"pausa\"):
 		pauseMenu()
 func pauseMenu():
@@ -44,6 +45,31 @@ func pauseMenu():
 
 [sub_resource type="Environment" id="Environment_8q1dw"]
 volumetric_fog_density = 0.01
+
+[sub_resource type="Theme" id="Theme_rin7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nofaa"]
+bg_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[sub_resource type="Theme" id="Theme_5nfti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d52e0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pw74t"]
+
+[sub_resource type="FontFile" id="FontFile_slwar"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xdo6"]
+font_color = Color(0.756863, 0.384314, 0.364706, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -62,3 +88,48 @@ environment = SubResource("Environment_8q1dw")
 transform = Transform3D(-0.9823, 7.31871e-09, 0.187313, 0.172508, -0.389654, 0.904661, 0.0729872, 0.920961, 0.382758, -0.0504959, 8.86339, 1.67507)
 
 [node name="MenuPausa" parent="." instance=ExtResource("6_jqaew")]
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelSuperior" type="Panel" parent="UserInterface"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 39.0
+theme = SubResource("Theme_rin7t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nofaa")
+
+[node name="Score" type="Panel" parent="UserInterface/PanelSuperior"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 40.0
+theme = SubResource("Theme_5nfti")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_d52e0")
+
+[node name="ScoreTitle" type="Label" parent="UserInterface/PanelSuperior/Score"]
+layout_mode = 2
+offset_left = 533.0
+offset_top = 9.0
+offset_right = 593.0
+offset_bottom = 32.0
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_pw74t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreNumber" type="Label" parent="UserInterface/PanelSuperior/Score"]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 9.0
+offset_right = 616.0
+offset_bottom = 32.0
+theme_override_fonts/font = SubResource("FontFile_slwar")
+text = "0"
+label_settings = SubResource("LabelSettings_5xdo6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_kh281")
