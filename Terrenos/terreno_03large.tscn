@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://oovcdr5ay2le"]
+[gd_scene load_steps=26 format=3 uid="uid://oovcdr5ay2le"]
 
 [ext_resource type="ArrayMesh" uid="uid://di8rf427uish2" path="res://assets/ElementosCiudad/obj/car_taxi.obj" id="1_1rrph"]
 [ext_resource type="ArrayMesh" uid="uid://dvb1cputrefxn" path="res://assets/ElementosCiudad/obj/car_police.obj" id="1_ee71t"]
@@ -15,6 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bkql0ay5m3k6w" path="res://assets/ElementosCiudad/obj/building_F.obj" id="13_282c3"]
 [ext_resource type="ArrayMesh" uid="uid://dp2n3qoxnprdq" path="res://assets/ElementosCiudad/obj/building_C.obj" id="14_gk61f"]
 [ext_resource type="ArrayMesh" uid="uid://bt4v7jnqxbaw2" path="res://assets/ElementosCiudad/obj/car_stationwagon.obj" id="15_adjeb"]
+[ext_resource type="ArrayMesh" uid="uid://cqecsjhmte6wl" path="res://assets/ElementosCiudad/Honda_VFR_1200_F_2015.obj" id="16_0niuu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wwdcc"]
 size = Vector2(100, 50)
@@ -40,13 +41,17 @@ points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jy7a8"]
 points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mn53r"]
+size = Vector3(1, 1.36084, 1.21429)
+
 [node name="Terreno_0" type="MeshInstance3D"]
 transform = Transform3D(-1.00195, 0, -9.12641e-08, 0, 1.00195, 0, 8.75932e-08, 0, -1.04394, 0, 0, 0)
 mesh = SubResource("PlaneMesh_wwdcc")
 script = ExtResource("1_iq5tk")
 
 [node name="Police Car" type="StaticBody3D" parent="."]
-transform = Transform3D(0.689481, 0, -2.84217e-14, 0, 0.981263, 0, 7.10543e-15, 0, 0.540308, 0.0287592, 0.390822, 4.68344)
+transform = Transform3D(0.689481, 0, -4.26326e-14, 0, 0.981263, 0, 7.10543e-15, 0, 0.540308, 0.0287592, -1.9237, 4.68344)
+visible = false
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Police Car"]
@@ -293,3 +298,11 @@ mesh = ExtResource("6_rhpww")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Red Car2"]
 transform = Transform3D(0.962503, 0, 0, 0, 0.43967, 0, 0, 0, 0.423368, 0.0279689, -0.809192, -1.6859)
 shape = SubResource("ConvexPolygonShape3D_jy7a8")
+
+[node name="Moto" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0136791, -0.000238769, -6.25106e-11, 7.28808e-11, 5.93567e-10, 0.0136812, -0.000238769, -0.0136791, 5.94748e-10, 0, 0.05, 4.63)
+mesh = ExtResource("16_0niuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Moto"]
+transform = Transform3D(177.748, 5.11978e-07, -3.20218, -3.10259, 4.16973e-06, -183.453, -8.12268e-07, 96.1085, 7.97629e-06, 0.001194, -0.358276, 53.6499)
+shape = SubResource("BoxShape3D_mn53r")
