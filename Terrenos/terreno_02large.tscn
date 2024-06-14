@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c552gs5aor5os"]
+[gd_scene load_steps=18 format=3 uid="uid://c552gs5aor5os"]
 
 [ext_resource type="Script" path="res://Terrenos/Terrenos.gd" id="1_a30hi"]
 [ext_resource type="ArrayMesh" uid="uid://bt4v7jnqxbaw2" path="res://assets/ElementosCiudad/obj/car_stationwagon.obj" id="1_r2ql6"]
 [ext_resource type="ArrayMesh" uid="uid://bkql0ay5m3k6w" path="res://assets/ElementosCiudad/obj/building_F.obj" id="2_uo4m5"]
 [ext_resource type="ArrayMesh" uid="uid://xblktxx3laf0" path="res://assets/ElementosCiudad/obj/building_H.obj" id="3_4pws8"]
+[ext_resource type="ArrayMesh" uid="uid://d3187sxwfdxgi" path="res://assets/ElementosCiudad/bus.obj" id="3_gtg4t"]
 [ext_resource type="ArrayMesh" uid="uid://bmpoc7ymy1dvh" path="res://assets/ElementosCiudad/obj/building_D.obj" id="4_eu56j"]
 [ext_resource type="ArrayMesh" uid="uid://6vgxjpybovwt" path="res://assets/ElementosCiudad/obj/building_E.obj" id="5_ff8i6"]
 [ext_resource type="PackedScene" uid="uid://bpoqqddudwas4" path="res://assets/ElementosCiudad/obj/StraightRoad1.gltf" id="6_m0cpu"]
@@ -17,17 +18,11 @@ size = Vector2(100, 50)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_njt1u"]
 points = PackedVector3Array(1.5, 0.65, 0.5, 1.5, 0.65, -0.5, -1.5, 0.65, 0.5, 1.5, -0.65, 0.5, 1.5, -0.65, -0.5, -1.5, 0.65, -0.5, -1.5, -0.65, 0.5, -1.5, -0.65, -0.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_w44yl"]
-size = Vector3(4.7, 4, 10)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s7tmr"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b47ck"]
 points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nelot"]
 data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0, -10, 50, 0, -10)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b47ck"]
-points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_114dv"]
 points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
@@ -52,17 +47,17 @@ mesh = ExtResource("1_r2ql6")
 transform = Transform3D(0.673347, 0, 0, 0, 2.06415, 0, 0, 0, 3.72691, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_njt1u")
 
-[node name="bloque_2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.826182, 5.8073, 0.5, 14.8149)
+[node name="Bus2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.01029, 0, 0, 0, 0.844698, 5.71741, 0.523268, 14.8149)
 metadata/Gameover = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_2"]
-transform = Transform3D(0.497751, 0, 0, 0, 0.738739, 0, 0, 0, 1, -2.1765, 1.05502, -3.17987)
-mesh = SubResource("BoxMesh_w44yl")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bus2"]
+transform = Transform3D(-6.34309e-08, 0, -1.20406, 0, 1.23042, 0, 1.45112, 0, -5.26309e-08, -2.06937, -0.408956, -3.17985)
+mesh = ExtResource("3_gtg4t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_2"]
-transform = Transform3D(0.499113, 0, 0, 0, 0.702881, 0, 0, 0, 0.989507, -2.14283, 1.02207, -3.17987)
-shape = SubResource("ConvexPolygonShape3D_s7tmr")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bus2"]
+transform = Transform3D(0.510399, 0, -4.9738e-14, 0, 0.62857, 0, -7.10543e-15, 0, 1.14969, -2.06109, 1.02345, -3.05047)
+shape = SubResource("ConvexPolygonShape3D_b47ck")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.658402, 0, 0)
@@ -71,16 +66,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.658402, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.50703, -0.031, 0, -0.0077734)
 shape = SubResource("ConcavePolygonShape3D_nelot")
 
-[node name="bloque_3" type="StaticBody3D" parent="."]
+[node name="Bus" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.879368, 0, 0, 0, 0.846446, -5.19056, 0.470279, 14.8826)
 metadata/Gameover = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_3"]
-transform = Transform3D(0.528273, 0, 0, 0, 0.818511, 0, 0, 0, 1, 1.49374, 1.20367, -3.17987)
-mesh = SubResource("BoxMesh_w44yl")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bus"]
+transform = Transform3D(-6.36111e-08, 0, -1.20406, 0, 1.41965, 0, 1.45525, 0, -5.2631e-08, 1.49374, -0.408956, -3.17987)
+mesh = ExtResource("3_gtg4t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_3"]
-transform = Transform3D(0.498031, 0, 0, 0, 0.799507, 0, 0, 0, 1, 1.59309, 1.13298, -3.17987)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bus"]
+transform = Transform3D(0.498031, 0, -4.26326e-14, 0, 0.799507, 0, -1.42109e-14, 0, 1.19017, 1.59309, 1.13298, -2.91879)
 shape = SubResource("ConvexPolygonShape3D_b47ck")
 
 [node name="BuildingF" type="MeshInstance3D" parent="."]

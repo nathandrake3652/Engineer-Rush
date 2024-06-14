@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqecsjhmte6wl"
+path="res://.godot/imported/Honda_VFR_1200_F_2015.obj-2e7c734d06c47bfae42a8cc6b1d4dfc6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Honda_VFR_1200_F_2015.obj-2e7c734d06c47bfae42a8cc6b1d4dfc6.mesh"]
+
+source_file="res://assets/ElementosCiudad/Honda_VFR_1200_F_2015.obj"
+dest_files=["res://.godot/imported/Honda_VFR_1200_F_2015.obj-2e7c734d06c47bfae42a8cc6b1d4dfc6.mesh", "res://.godot/imported/Honda_VFR_1200_F_2015.obj-2e7c734d06c47bfae42a8cc6b1d4dfc6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

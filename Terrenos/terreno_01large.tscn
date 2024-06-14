@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dqy4pts70jgp7"]
+[gd_scene load_steps=31 format=3 uid="uid://dqy4pts70jgp7"]
 
 [ext_resource type="ArrayMesh" uid="uid://db16xkxrtv1a" path="res://assets/ElementosCiudad/obj/dumpster.obj" id="1_6lbes"]
 [ext_resource type="Script" path="res://Terrenos/Terrenos.gd" id="1_7ci8h"]
@@ -20,6 +20,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dp2n3qoxnprdq" path="res://assets/ElementosCiudad/obj/building_C.obj" id="18_j0xae"]
 [ext_resource type="ArrayMesh" uid="uid://cr3akhpdvi1fo" path="res://assets/ElementosCiudad/obj/building_B.obj" id="19_xq546"]
 [ext_resource type="ArrayMesh" uid="uid://b4wwo2s5aa8kd" path="res://assets/ElementosCiudad/obj/car_hatchback.obj" id="20_2rheg"]
+[ext_resource type="ArrayMesh" uid="uid://cqecsjhmte6wl" path="res://assets/ElementosCiudad/Honda_VFR_1200_F_2015.obj" id="21_1h24o"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wwdcc"]
 size = Vector2(100, 50)
@@ -44,6 +45,9 @@ points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l0m51"]
 points = PackedVector3Array(2.34954, 2, 5, 2.34954, -2, 5, 2.34954, 2, -5, -2.35, 2, 5, -2.35, -2, 5, 2.34954, -2, -5, -2.35, 2, -5, -2.35, -2, -5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6n4c"]
+size = Vector3(1, 1.18591, 1.21429)
 
 [node name="Terreno_2" type="MeshInstance3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -252,7 +256,8 @@ transform = Transform3D(0.801306, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0
 shape = SubResource("ConcavePolygonShape3D_2vpwb")
 
 [node name="Police Car2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.689482, 0, 0, 0, 0.981263, 0, 0, 0, 0.540308, 2.06151e-06, 0.541, -14.4249)
+transform = Transform3D(0.689482, 0, 0, 0, 0.981263, 0, 0, 0, 0.540308, 2.06151e-06, -2.00827, -14.4249)
+visible = false
 metadata/Gameover = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Police Car2"]
@@ -315,8 +320,18 @@ transform = Transform3D(-5.38659, 0, -6.44594e-07, 0, 5.22914, 0, 3.13788e-07, 0
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
 
+
+[node name="Moto" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0136791, -0.000238769, -6.25106e-11, 7.28808e-11, 5.93567e-10, 0.0136812, -0.000238769, -0.0136791, 5.94748e-10, -0.000100602, 0.0502643, -14.4168)
+mesh = ExtResource("21_1h24o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Moto"]
+transform = Transform3D(197.321, 5.11978e-07, -3.20219, -3.44425, 4.16973e-06, -183.453, -9.01715e-07, 96.1085, 7.97629e-06, 0.001194, -0.358276, 62.0559)
+shape = SubResource("BoxShape3D_l6n4c")
+=======
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
