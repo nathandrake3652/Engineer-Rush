@@ -320,6 +320,7 @@ transform = Transform3D(-5.38659, 0, -6.44594e-07, 0, 5.22914, 0, 3.13788e-07, 0
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
 
+
 [node name="Moto" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0136791, -0.000238769, -6.25106e-11, 7.28808e-11, 5.93567e-10, 0.0136812, -0.000238769, -0.0136791, 5.94748e-10, -0.000100602, 0.0502643, -14.4168)
 mesh = ExtResource("21_1h24o")
@@ -327,3 +328,10 @@ mesh = ExtResource("21_1h24o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Moto"]
 transform = Transform3D(197.321, 5.11978e-07, -3.20219, -3.44425, 4.16973e-06, -183.453, -9.01715e-07, 96.1085, 7.97629e-06, 0.001194, -0.358276, 62.0559)
 shape = SubResource("BoxShape3D_l6n4c")
+=======
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+

@@ -299,6 +299,7 @@ mesh = ExtResource("6_rhpww")
 transform = Transform3D(0.962503, 0, 0, 0, 0.43967, 0, 0, 0, 0.423368, 0.0279689, -0.809192, -1.6859)
 shape = SubResource("ConvexPolygonShape3D_jy7a8")
 
+
 [node name="Moto" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0136791, -0.000238769, -6.25106e-11, 7.28808e-11, 5.93567e-10, 0.0136812, -0.000238769, -0.0136791, 5.94748e-10, 0, 0.05, 4.63)
 mesh = ExtResource("16_0niuu")
@@ -306,3 +307,9 @@ mesh = ExtResource("16_0niuu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Moto"]
 transform = Transform3D(177.748, 5.11978e-07, -3.20218, -3.10259, 4.16973e-06, -183.453, -8.12268e-07, 96.1085, 7.97629e-06, 0.001194, -0.358276, 53.6499)
 shape = SubResource("BoxShape3D_mn53r")
+=======
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+

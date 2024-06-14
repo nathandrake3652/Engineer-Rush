@@ -212,6 +212,7 @@ skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
 transform = Transform3D(0.962503, 0, 0, 0, 0.43967, 0, 0, 0, 0.423368, 0.0279689, -0.809192, -1.6859)
 shape = SubResource("ConvexPolygonShape3D_lamyw")
 
+
 [node name="Bus2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.01029, 0, 0, 0, 0.844698, 5.7561, 0.523268, -11.703)
 metadata/Gameover = false
@@ -235,3 +236,9 @@ mesh = ExtResource("18_jpx4j")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bus"]
 transform = Transform3D(0.498031, 0, -4.26326e-14, 0, 0.799507, 0, -1.42109e-14, 0, 1.19017, 1.59309, 1.13298, -2.91879)
 shape = SubResource("ConvexPolygonShape3D_btpu2")
+=======
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+

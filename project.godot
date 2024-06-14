@@ -15,9 +15,15 @@ run/main_scene="res://menu principal/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+
 [filesystem]
 
 import/fbx/enabled=false
+=======
+[autoload]
+
+GlobalTimer="res://Power ups/timer.tscn"
+
 
 [input]
 
