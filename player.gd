@@ -42,3 +42,12 @@ func _on_area_3d_body_entered(body):
 	if body.has_meta("Gameover"):
 		pass
 		#get_tree().quit()
+	if body.is_in_group("Pu"):
+		print("hit")
+		queue_free()
+	if body.has_meta("Power Up"):
+		print("hit")
+		queue_free() 
+
+
+

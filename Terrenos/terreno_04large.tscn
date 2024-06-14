@@ -240,3 +240,8 @@ skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Red Car2"]
 transform = Transform3D(0.962503, 0, 0, 0, 0.43967, 0, 0, 0, 0.423368, 0.0279689, -0.809192, -1.6859)
 shape = SubResource("ConvexPolygonShape3D_lamyw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

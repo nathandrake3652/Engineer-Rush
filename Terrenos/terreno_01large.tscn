@@ -314,3 +314,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(-5.38659, 0, -6.44594e-07, 0, 5.22914, 0, 3.13788e-07, 0, -4.91313, -0.729504, -1.68348, -1.86006)
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

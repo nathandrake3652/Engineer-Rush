@@ -41,6 +41,14 @@ func pauseMenu():
 		menu_pausa.show()
 		Engine.time_scale = 0
 	paused = !paused
+	
+	
+
+	
+
+
+func _on_timer_timeout():
+	pass 
 "
 
 [sub_resource type="Environment" id="Environment_8q1dw"]
