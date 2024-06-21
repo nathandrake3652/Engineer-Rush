@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjw07dl6xehhx"]
+[gd_scene load_steps=7 format=3 uid="uid://bjw07dl6xehhx"]
 
 [ext_resource type="PackedScene" uid="uid://dui3g4vdt88p1" path="res://player.tscn" id="2_45mye"]
 [ext_resource type="PackedScene" uid="uid://bbgypqkmnefvp" path="res://controlador_terreno.tscn" id="2_118bu"]
-[ext_resource type="Script" path="res://player.gd" id="3_dm4eq"]
 [ext_resource type="PackedScene" uid="uid://d2mivm2k44k2l" path="res://niveles/node_inf.tscn" id="4_y4uni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g7y03"]
@@ -31,6 +30,5 @@ shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("2_45mye")]
 transform = Transform3D(-0.999782, 0, -0.02089, 0, 1, 0, 0.02089, 0, -0.999782, 0, 0, 0)
-script = ExtResource("3_dm4eq")
 
 [node name="Node3D" parent="." instance=ExtResource("4_y4uni")]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbtia5kc5ynpa"]
+[gd_scene load_steps=5 format=3 uid="uid://cbtia5kc5ynpa"]
+
+[ext_resource type="Script" path="res://Power ups/PowerUp1.gd" id="1_s4368"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1dfcg"]
 points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
@@ -6,8 +8,12 @@ points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.
 [sub_resource type="BoxMesh" id="BoxMesh_bgpbh"]
 size = Vector3(1, 0.1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o74yq"]
+size = Vector3(1, 0.2, 1)
+
 [node name="PowerUp1" type="Node3D" groups=["Pu"]]
 transform = Transform3D(1, 0, 0, 0, 0.304898, 0.952385, 0, -0.952385, 0.304898, 0, 0, 0)
+script = ExtResource("1_s4368")
 metadata/Pu = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -27,3 +33,13 @@ mesh = SubResource("BoxMesh_bgpbh")
 skeleton = NodePath("../..")
 metadata/PowerUp = true
 metadata/Pu = true
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+metadata/PU = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(0.999434, 0.0336262, 0.00108316, -0.0310209, 0.908584, 0.41655, 0.0130228, -0.416347, 0.909113, 0, 0.228839, 0.602679)
+shape = SubResource("BoxShape3D_o74yq")
+metadata/Pu = false
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

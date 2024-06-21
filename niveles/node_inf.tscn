@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d2mivm2k44k2l"]
+[gd_scene load_steps=18 format=3 uid="uid://d2mivm2k44k2l"]
 
 [ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_01large.tscn" id="1_unm34"]
 [ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_02large.tscn" id="2_gyhc5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05large.tscn" id="5_lhk1j"]
 [ext_resource type="PackedScene" uid="uid://dmwin7eipuq23" path="res://menu_pausa.tscn" id="6_jqaew"]
 [ext_resource type="Script" path="res://scripts/score/ScoreNumber.gd" id="7_kh281"]
+[ext_resource type="PackedScene" uid="uid://cbtia5kc5ynpa" path="res://Power ups/PowerUp1.tscn" id="8_loyj4"]
 
 [sub_resource type="GDScript" id="GDScript_5qw8i"]
 script/source = "extends Node3D
@@ -35,9 +36,10 @@ func _process(_delta):
 		pauseMenu()
 func pauseMenu():
 	if paused:
-		menu_pausa.hide()
 		Engine.time_scale = 1
+		menu_pausa.hide()
 	else:
+		menu_pausa.hide()
 		menu_pausa.show()
 		Engine.time_scale = 0
 	paused = !paused
@@ -141,3 +143,6 @@ label_settings = SubResource("LabelSettings_5xdo6")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_kh281")
+
+[node name="PowerUp1" parent="." instance=ExtResource("8_loyj4")]
+transform = Transform3D(0.787269, 0.58725, -0.188003, 0, 0.304898, 0.952385, 0.61661, -0.749783, 0.240037, 0, 16.6335, 27.7407)

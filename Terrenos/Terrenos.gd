@@ -8,13 +8,14 @@ extends MeshInstance3D
 #@onready var nivel= $"../" 
 var PowerUps = preload("res://Power ups/PowerUp1.tscn")
 #>>>>>>> Stashed changes
-var velocidad = 20 
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.z -= velocidad *delta
+	position.z -= Variables.velocidad*delta
 	if position.z < -45:
-		puntaje._on_score(velocidad)
+		puntaje._on_score(Variables.velocidad)
 		nivel.spawnescena(position.z+(nivel.amount*nivel.offset))	
 		queue_free()
 		
@@ -41,3 +42,5 @@ func valor_z():
 	var values = [5, 10,15]
 	var random_index = randi() % values.size()
 	return values[random_index]
+
+
