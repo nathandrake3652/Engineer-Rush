@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjahxo36ghlj"
+path="res://.godot/imported/toolbox.obj-b5186abd7b7314ff4331601588c3136f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/toolbox.obj-b5186abd7b7314ff4331601588c3136f.mesh"]
+
+source_file="res://Power ups/toolbox.obj"
+dest_files=["res://.godot/imported/toolbox.obj-b5186abd7b7314ff4331601588c3136f.mesh", "res://.godot/imported/toolbox.obj-b5186abd7b7314ff4331601588c3136f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

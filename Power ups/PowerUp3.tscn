@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://df30w35fkmiew"]
+
+[ext_resource type="Script" path="res://Power ups/PowerUp3.gd" id="1_h6bp2"]
+[ext_resource type="ArrayMesh" uid="uid://bjahxo36ghlj" path="res://Power ups/toolbox.obj" id="2_5ax28"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1dfcg"]
+points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgpbh"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o74yq"]
+size = Vector3(1, 0.2, 1)
+
+[node name="PowerUp1" type="Node3D" groups=["Pu"]]
+transform = Transform3D(1, 0, 0, 0, 0.304898, 0.952385, 0, -0.952385, 0.304898, 0, 0, 0)
+script = ExtResource("1_h6bp2")
+metadata/Pu = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996163, -0.087521, 0, 0.087521, 0.996163, 0, 0.0496875, 0.155205)
+metadata/PowerUp = true
+metadata/Pu = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["Pu"]]
+transform = Transform3D(1, 0, 0, 0, 0.918115, 0.396315, 0, -0.396315, 0.918115, 0, 0.200032, 0.624825)
+shape = SubResource("ConvexPolygonShape3D_1dfcg")
+metadata/PowerUp = true
+metadata/Pu = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" groups=["Pu"]]
+transform = Transform3D(1, 0, 0, 0, 0.907184, 0.420735, 0, -0.420735, 0.907184, 0, 0.200032, 0.624825)
+mesh = SubResource("BoxMesh_bgpbh")
+skeleton = NodePath("../..")
+metadata/PowerUp = true
+metadata/Pu = true
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+metadata/PU = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(0.999434, 0.0336262, 0.00108316, -0.0310209, 0.908584, 0.41655, 0.0130228, -0.416347, 0.909113, 0, 0.228839, 0.602679)
+shape = SubResource("BoxShape3D_o74yq")
+metadata/Pu = false
+
+[node name="Toolbox" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.003, 0, 0, 0, 0.000803128, -0.0028905, 0, 0.0028905, 0.000803128, 0.177428, -0.0011977, 0.0228411)
+visible = false
+layers = 3
+mesh = ExtResource("2_5ax28")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -15,6 +15,8 @@ func _process(delta):
 func _on_area_3d_body_entered(body):
 	if body.has_meta("Player"):
 		print("power up")
+		Variables.powerups.append(1)
+		print(Variables.powerups)
 		Variables.acelerar()
 		queue_free()
 	

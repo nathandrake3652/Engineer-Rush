@@ -6,10 +6,10 @@ extends MeshInstance3D
 @onready var puntaje = 	$"../../UserInterface/PanelSuperior/Score/ScoreNumber"
 #=======
 #@onready var nivel= $"../" 
-var PowerUps = preload("res://Power ups/PowerUp1.tscn")
+var PowerUps1 = preload("res://Power ups/PowerUp1.tscn")
 #>>>>>>> Stashed changes
-
-
+var PowerUps2 = preload("res://Power ups/PowerUp2.tscn")
+var PowerUps3 = preload("res://Power ups/PowerUp3.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,14 +20,24 @@ func _process(delta):
 		queue_free()
 		
 
-func inst(pos):
-	var instance =PowerUps.instantiate()
-	instance.position = pos
-	add_child(instance)
+func inst(pos,tipo):
+	if tipo == 1:
+		var instance =PowerUps1.instantiate()
+		instance.position = pos
+		add_child(instance)
+	if tipo ==2:
+		var instance =PowerUps2.instantiate()
+		instance.position = pos
+		add_child(instance)
+	if tipo ==3:
+		var instance =PowerUps3.instantiate()
+		instance.position = pos
+		add_child(instance)
 	
 
 func _on_timer_timeout():
-	inst(Vector3(valor_x(),2,valor_z()))
+	var tipo = get_random_value()
+	inst(Vector3(valor_x(),2,valor_z()),tipo)
 	
 
 
@@ -43,4 +53,5 @@ func valor_z():
 	var random_index = randi() % values.size()
 	return values[random_index]
 
-
+func get_random_value():
+	return randi() % 3 + 1
