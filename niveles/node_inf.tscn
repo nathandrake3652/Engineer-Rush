@@ -158,7 +158,12 @@ autostart = true
 [node name="PowerUp2" parent="." instance=ExtResource("9_txgwa")]
 transform = Transform3D(1, 0, 0, 0, 0.304898, 0.952385, 0, -0.952385, 0.304898, 0, 23.155, 0)
 
+[node name="Timer" type="Timer" parent="PowerUp2"]
+wait_time = 15.0
+autostart = true
+
 [node name="PowerUp3" parent="." instance=ExtResource("10_1kqdc")]
 transform = Transform3D(1, 0, 0, 0, 0.304898, 0.952385, 0, -0.952385, 0.304898, 0, 23.5351, 0)
 
 [connection signal="timeout" from="PowerUp1/Timer" to="nivel_1" method="_on_timer_timeout"]
+[connection signal="timeout" from="PowerUp2/Timer" to="PowerUp2" method="_on_timer_timeout"]

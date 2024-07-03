@@ -17,6 +17,11 @@ func _on_area_3d_body_entered(body):
 		print("power up")
 		Variables.powerups.append(2)
 		print(Variables.powerups)
-		Variables.acelerar()
 		queue_free()
 	
+
+
+func _on_timer_timeout():
+	Variables.multiplierscore = false
+	Variables.multiplierspeed = false
+	Variables.superjump = false

@@ -13,8 +13,11 @@ var PowerUps3 = preload("res://Power ups/PowerUp3.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.z -= Variables.velocidad*delta
-	if position.z < -45:
+	if Variables.multiplierspeed == true:
+		position.z -= Variables.velocidad*delta*1.5
+	else:
+		position.z -= Variables.velocidad*delta
+	if position.z < -100:
 		puntaje._on_score(Variables.velocidad)
 		nivel.spawnescena(position.z+(nivel.amount*nivel.offset))	
 		queue_free()

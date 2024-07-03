@@ -1,47 +1,55 @@
 extends Node
 
-
+var multiplierscore = false
+var multiplierspeed = false
+var shield = true
 var velocidad = 10
+var limite = 30
+var superjump = true
 func acelerar():
-	if velocidad > 30:
+	if velocidad > limite:
 		velocidad = velocidad +0.5
 var powerups = []
 var score = 0
 func scoreup():
-	score += velocidad
-	print(score)
+	if multiplierscore == true:
+		score += velocidad*2
+	else:
+		score += velocidad
+		print(score)
+	return score
 	
 
 func check():
 	if powerups == [1,1]:
-		print('1,1')
+		score = score + 50
 		powerups.clear()
 	if powerups == [1,2]:
-		print('1,2')
+		limite = limite  +5
 		acelerar()
 		powerups.clear()
 	if powerups == [1,3]:
-		print('1,3')
+		limite = limite -5
 		powerups.clear()
 	if powerups == [2,1]:
-		print('2,1')
+		multiplierscore = true
 		powerups.clear()
 	if powerups == [2,2]:
-		print('2,2')
+		score = score + 50
 		powerups.clear()
 	if powerups == [2,3]:
-		print('2,3')
+		shield = true
 		powerups.clear()
 	if powerups == [3,1]:
-		print('3,1')
+		multiplierspeed = true
 		powerups.clear()
 	if powerups == [3,2]:
-		print('3,2')
+		superjump = true
 		powerups.clear()
 	if powerups == [3,3]:
-		print('3,3')
+		score = score + 50
 		powerups.clear()
 	if powerups.size() == 3:
-		print('esto no deberia pasar')
+		score = score + 100
 		powerups.clear()
 		

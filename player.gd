@@ -15,7 +15,11 @@ var menu_muerte_scene = load("res://Menu Muerte/menu_muerte.tscn") as PackedScen
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _physics_process(delta):
-	if not is_on_floor():
+	
+	if not is_on_floor() and Variables.superjump == true:
+		velocity.y -= gravity * delta * 0.5
+	
+	else :if not is_on_floor():
 		velocity.y -= gravity * delta
 
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
@@ -40,14 +44,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_area_3d_body_entered(body):
-	if body.has_meta("Gameover"):
+	if body.has_meta("Gameover") and Variables.shield == true:
+		position.z = position.z +6
+		Variables.shield = false
+	else: if body.has_meta("Gameover"):
 		get_tree().change_scene_to_packed(menu_muerte_scene)
-	if body.is_in_group("Pu"):
-		print("hit")
-		queue_free()
-	if body.has_meta("Power Up"):
-		print("hit")
-		queue_free() 
 
 
 
