@@ -9,6 +9,7 @@ const LEFT_POSITION = DISTANCE_POSITION
 const RIGHT_POSITION = -DISTANCE_POSITION -0.5
 const FORWARD_SPEED = 10.0
 var player_position_x = CENTER_POSITION
+var menu_muerte_scene = load("res://Menu Muerte/menu_muerte.tscn") as PackedScene
 
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -40,8 +41,7 @@ func _physics_process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body.has_meta("Gameover"):
-		pass
-		#get_tree().quit()
+		get_tree().change_scene_to_packed(menu_muerte_scene)
 	if body.is_in_group("Pu"):
 		print("hit")
 		queue_free()
