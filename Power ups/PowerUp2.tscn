@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://emcy85uogmh4"]
+[gd_scene load_steps=6 format=3 uid="uid://emcy85uogmh4"]
 
 [ext_resource type="Script" path="res://Power ups/PowerUp2.gd" id="1_rpe80"]
+[ext_resource type="ArrayMesh" uid="uid://dbgfcybervncf" path="res://Power ups/resource_stone.obj" id="2_oq1hk"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1dfcg"]
 points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
@@ -22,13 +23,14 @@ metadata/PowerUp = true
 metadata/Pu = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["Pu"]]
-transform = Transform3D(1, 0, 0, 0, 0.918115, 0.396315, 0, -0.396315, 0.918115, 0, 0.200032, 0.624825)
+transform = Transform3D(1, 0, 0, 0, 0.89261, 0.450831, 0, -0.450831, 0.89261, 0, 0.200032, 0.624825)
 shape = SubResource("ConvexPolygonShape3D_1dfcg")
 metadata/PowerUp = true
 metadata/Pu = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" groups=["Pu"]]
 transform = Transform3D(1, 0, 0, 0, 0.907184, 0.420735, 0, -0.420735, 0.907184, 0, 0.200032, 0.624825)
+visible = false
 mesh = SubResource("BoxMesh_bgpbh")
 skeleton = NodePath("../..")
 metadata/PowerUp = true
@@ -41,5 +43,9 @@ metadata/PU = true
 transform = Transform3D(0.999434, 0.0336262, 0.00108316, -0.0310209, 0.908584, 0.41655, 0.0130228, -0.416347, 0.909113, 0, 0.228839, 0.602679)
 shape = SubResource("BoxShape3D_o74yq")
 metadata/Pu = false
+
+[node name="ResourceStone" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0337878, -0.0403794, -1.99931, -1.9045, 0.609022, -0.0444859, 0.609709, 1.90459, -0.0281625, 0.0400836, 0.0625752, 0.553704)
+mesh = ExtResource("2_oq1hk")
 
 [connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
