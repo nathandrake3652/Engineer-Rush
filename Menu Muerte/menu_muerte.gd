@@ -16,4 +16,3 @@ func on_mp_pressed() -> void:
 
 func actualizar_label():
 	label.text = "Score: " + str(score)
-	label.z_index = 1
