@@ -2,7 +2,7 @@ class_name menu_muerte
 extends Control
 
 
-@onready var menu_principal = $TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Button as Button
+@onready var menu_principal = $MarginContainer/HBoxContainer/VBoxContainer/Button as Button
 @onready var ir_menu_principal = load("res://menu principal/menu_principal.tscn") as PackedScene
 
 func _ready():

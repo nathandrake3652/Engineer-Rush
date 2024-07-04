@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxs72fd8vrttg"
-path="res://.godot/imported/Fondo_de_inicio_Engineer_Rush.jpg-4be9b0aa49d630c0ae80bb203e357728.ctex"
+uid="uid://cft6radbi26tj"
+path="res://.godot/imported/Fondo_muerte.jpg-5f0f0c96afa379a504385a646bd98e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/extras/Fondo_de_inicio_Engineer_Rush.jpg"
-dest_files=["res://.godot/imported/Fondo_de_inicio_Engineer_Rush.jpg-4be9b0aa49d630c0ae80bb203e357728.ctex"]
+source_file="res://assets/extras/Fondo_muerte.jpg"
+dest_files=["res://.godot/imported/Fondo_muerte.jpg-5f0f0c96afa379a504385a646bd98e57.ctex"]
 
 [params]
 

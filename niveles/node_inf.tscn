@@ -105,42 +105,63 @@ transform = Transform3D(-0.9823, 7.31871e-09, 0.187313, 0.172508, -0.389654, 0.9
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelSuperior" type="Panel" parent="UserInterface"]
-layout_mode = 0
-offset_top = -1.0
-offset_right = 1152.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
 theme = SubResource("Theme_rin7t")
 theme_override_styles/panel = SubResource("StyleBoxFlat_nofaa")
 
 [node name="Score" type="Panel" parent="UserInterface/PanelSuperior"]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 80.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_5nfti")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_d52e0")
 
 [node name="ScoreTitle" type="Label" parent="UserInterface/PanelSuperior/Score"]
-layout_mode = 2
-offset_left = 533.0
-offset_top = 9.0
-offset_right = 593.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 60.0
+offset_bottom = 11.5
+grow_vertical = 2
 text = "SCORE: "
 label_settings = SubResource("LabelSettings_pw74t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreNumber" type="Label" parent="UserInterface/PanelSuperior/Score"]
-layout_mode = 0
-offset_left = 596.0
-offset_top = 9.0
-offset_right = 616.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_fonts/font = SubResource("FontFile_slwar")
 text = "0"
 label_settings = SubResource("LabelSettings_5xdo6")

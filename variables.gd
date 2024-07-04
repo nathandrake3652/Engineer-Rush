@@ -2,10 +2,10 @@ extends Node
 
 var multiplierscore = false
 var multiplierspeed = false
-var shield = true
+var shield = false
 var velocidad = 10
 var limite = 30
-var superjump = true
+var superjump = false
 func acelerar():
 	if velocidad > limite:
 		velocidad = velocidad +0.5
