@@ -4,7 +4,7 @@ const SCORER_SERVER_URL = "https://ucn-game-server.martux.cl/scores"
 const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzM2M0OGIyOC02ODJkLTQ1NDctOTU5NS1jM2Q0M2IxMWM0OWQiLCJrZXkiOiJTS3lzS3pLWmxkZmpMWVJaZnFjcHVGMHZGIiwiaWF0IjoxNzE5NDYxNTMzLCJleHAiOjE3NTA5OTc1MzN9.zhZj8jC-BVD7V1INOKLztGoPv4PAc-GLpnjPsx6R5PU"
 const AUTH_HEADER = "Authorization: Bearer %s" % TOKEN
 @onready var http_request = $HTTPRequest
-
+@onready var score_panel = load("res://ScorePanel.tscn") as PackedScene
 
 @onready var player_name_input = $VBoxContainer/LineEdit
 @onready var submit_button = $VBoxContainer/Button
@@ -21,7 +21,7 @@ func _on_submit_button_pressed():
 	
 	var data = {
 		"playerName": player_name,
-		"score": 100  # Aquí iria la puntuación
+		"score": Variables.score 
 	}
 	_register_score(data)
 
@@ -32,6 +32,8 @@ func _on_request_completed(result, response_code, headers, body):
 	
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	print("Respuesta:", json)
+	get_tree().change_scene_to_packed(score_panel)
+	
 
 func _register_score(data: Dictionary):
 	# Formato: var data = {"playerName": "", "score": 0}

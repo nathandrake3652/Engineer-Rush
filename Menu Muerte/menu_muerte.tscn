@@ -64,6 +64,16 @@ color = Color(0, 0, 0, 0.454902)
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
+[node name="subir_puntaje" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Subir Puntaje"
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2

@@ -5,6 +5,8 @@ const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzM2M0OGIyOC02
 const AUTH_HEADER = "Authorization: Bearer %s" % TOKEN
 @onready var http_request = $HTTPRequest
 @onready var score_container = $CenterContainer/GridContainer
+@onready var menu_principal = $Menu_Principal as Button
+@onready var ir_menu_principal = load("res://menu principal/menu_principal.tscn") as PackedScene
 
 func _ready():
 	var label_id_title = Label.new()
@@ -22,6 +24,9 @@ func _ready():
 	
 	http_request.request_completed.connect(_on_request_completed)
 	_get_scores()
+	
+	menu_principal.button_down.connect(mp_pressed)
+	
 
 func _on_request_completed(result, response_code, headers, body):
 	if result != OK:
@@ -45,3 +50,6 @@ func _get_scores():
 	var headers = [AUTH_HEADER]
 	http_request.request(SCORER_SERVER_URL, headers, HTTPClient.METHOD_GET)
 	
+
+func mp_pressed():
+	get_tree().change_scene_to_packed(ir_menu_principal)
