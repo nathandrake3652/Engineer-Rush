@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0oe80u3icerq"]
+
+[ext_resource type="PackedScene" uid="uid://bbgypqkmnefvp" path="res://controlador_terreno.tscn" id="1_6f8md"]
+[ext_resource type="PackedScene" uid="uid://dui3g4vdt88p1" path="res://player.tscn" id="2_nkg5v"]
+[ext_resource type="PackedScene" uid="uid://bq4m4ju670f33" path="res://niveles/niveles_historia/NIvel 5/node_nivel5.tscn" id="3_bhchp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g7y03"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_y2o8f"]
+sky_material = SubResource("ProceduralSkyMaterial_g7y03")
+
+[sub_resource type="Environment" id="Environment_t7rrl"]
+background_mode = 2
+sky = SubResource("Sky_y2o8f")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Mundo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t7rrl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.876281, 0.417251, -0.2409, 1.54176e-08, 0.5, 0.866026, 0.4818, -0.758882, 0.43814, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Controlador_Terreno" parent="." instance=ExtResource("1_6f8md")]
+
+[node name="player" parent="." instance=ExtResource("2_nkg5v")]
+transform = Transform3D(-0.999782, 0, -0.02089, 0, 1, 0, 0.02089, 0, -0.999782, 0, 0, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("3_bhchp")]

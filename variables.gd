@@ -10,7 +10,7 @@ func acelerar():
 	if velocidad > limite:
 		velocidad = velocidad +0.5
 var powerups = []
-var score = 0
+var score = 1
 func scoreup():
 	if multiplierscore == true:
 		score += velocidad*2

@@ -1,15 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2mivm2k44k2l"]
+[gd_scene load_steps=21 format=3 uid="uid://tw2rpb45ohhs"]
 
-[ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_01large.tscn" id="1_unm34"]
-[ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_02large.tscn" id="2_gyhc5"]
-[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03large.tscn" id="3_0b5ys"]
-[ext_resource type="PackedScene" uid="uid://cdpgojnelp7p6" path="res://Terrenos/terreno_04large.tscn" id="3_j6vjq"]
-[ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05large.tscn" id="5_lhk1j"]
-[ext_resource type="PackedScene" uid="uid://dmwin7eipuq23" path="res://menu_pausa.tscn" id="6_jqaew"]
-[ext_resource type="Script" path="res://scripts/score/ScoreNumber.gd" id="7_kh281"]
-[ext_resource type="PackedScene" uid="uid://cbtia5kc5ynpa" path="res://Power ups/PowerUp1.tscn" id="8_loyj4"]
-[ext_resource type="PackedScene" uid="uid://emcy85uogmh4" path="res://Power ups/PowerUp2.tscn" id="9_txgwa"]
-[ext_resource type="PackedScene" uid="uid://df30w35fkmiew" path="res://Power ups/PowerUp3.tscn" id="10_1kqdc"]
+[ext_resource type="PackedScene" uid="uid://dqy4pts70jgp7" path="res://Terrenos/terreno_01large.tscn" id="1_kj4xl"]
+[ext_resource type="Script" path="res://niveles/niveles_historia/Nivel3/node_nivel3.gd" id="1_m0q6n"]
+[ext_resource type="PackedScene" uid="uid://c552gs5aor5os" path="res://Terrenos/terreno_02large.tscn" id="2_ye1vr"]
+[ext_resource type="PackedScene" uid="uid://oovcdr5ay2le" path="res://Terrenos/terreno_03large.tscn" id="3_1k5q4"]
+[ext_resource type="PackedScene" uid="uid://cdpgojnelp7p6" path="res://Terrenos/terreno_04large.tscn" id="4_k252e"]
+[ext_resource type="PackedScene" uid="uid://cj4axm7h1siry" path="res://Terrenos/terreno_05large.tscn" id="5_lbl60"]
+[ext_resource type="PackedScene" uid="uid://dmwin7eipuq23" path="res://menu_pausa.tscn" id="6_lbceq"]
+[ext_resource type="Script" path="res://scripts/score/ScoreNumber.gd" id="7_obdf1"]
+[ext_resource type="PackedScene" uid="uid://cbtia5kc5ynpa" path="res://Power ups/PowerUp1.tscn" id="8_uk313"]
+[ext_resource type="PackedScene" uid="uid://emcy85uogmh4" path="res://Power ups/PowerUp2.tscn" id="9_0o7hy"]
+[ext_resource type="PackedScene" uid="uid://df30w35fkmiew" path="res://Power ups/PowerUp3.tscn" id="10_lu5os"]
 
 [sub_resource type="GDScript" id="GDScript_5qw8i"]
 script/source = "extends Node3D
@@ -86,6 +87,7 @@ font_color = Color(0.756863, 0.384314, 0.364706, 1)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134336, 0)
+script = ExtResource("1_m0q6n")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.996891, 0.0776564, 0.0133484, 0.0781191, 0.951906, 0.296265, 0.0103004, 0.296387, -0.955013, -0.0111541, 9.05761, -0.796998)
@@ -93,7 +95,7 @@ fov = 48.6093
 
 [node name="nivel_1" type="Node3D" parent="."]
 script = SubResource("GDScript_5qw8i")
-escenas = Array[PackedScene]([ExtResource("1_unm34"), ExtResource("2_gyhc5"), ExtResource("3_0b5ys"), ExtResource("3_j6vjq"), ExtResource("5_lhk1j")])
+escenas = Array[PackedScene]([ExtResource("1_kj4xl"), ExtResource("2_ye1vr"), ExtResource("3_1k5q4"), ExtResource("4_k252e"), ExtResource("5_lbl60")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8q1dw")
@@ -101,7 +103,7 @@ environment = SubResource("Environment_8q1dw")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.9823, 7.31871e-09, 0.187313, 0.172508, -0.389654, 0.904661, 0.0729872, 0.920961, 0.382758, -0.0504959, 8.86339, 1.67507)
 
-[node name="MenuPausa" parent="." instance=ExtResource("6_jqaew")]
+[node name="MenuPausa" parent="." instance=ExtResource("6_lbceq")]
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -167,24 +169,28 @@ text = "0"
 label_settings = SubResource("LabelSettings_5xdo6")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_kh281")
+script = ExtResource("7_obdf1")
 
-[node name="PowerUp1" parent="." instance=ExtResource("8_loyj4")]
+[node name="PowerUp1" parent="." instance=ExtResource("8_uk313")]
 transform = Transform3D(-0.0699939, 0.000877305, -0.000280862, 0, 0.0213429, 0.066667, 0.000921167, 0.0666612, -0.021341, 0, 16.6335, 39.9892)
 
 [node name="Timer" type="Timer" parent="PowerUp1"]
 wait_time = 0.05
 autostart = true
 
-[node name="PowerUp2" parent="." instance=ExtResource("9_txgwa")]
+[node name="PowerUp2" parent="." instance=ExtResource("9_0o7hy")]
 transform = Transform3D(1, 0, 0, 0, 0.304898, 0.952385, 0, -0.952385, 0.304898, 0, 23.155, 0)
 
 [node name="Timer" type="Timer" parent="PowerUp2"]
 wait_time = 15.0
 autostart = true
 
-[node name="PowerUp3" parent="." instance=ExtResource("10_1kqdc")]
+[node name="PowerUp3" parent="." instance=ExtResource("10_lu5os")]
 transform = Transform3D(1, 0, 0, 0, 0.304898, 0.952385, 0, -0.952385, 0.304898, 0, 23.5351, 0)
+
+[node name="Contador nivel 3" type="Timer" parent="."]
+wait_time = 300.0
 
 [connection signal="timeout" from="PowerUp1/Timer" to="nivel_1" method="_on_timer_timeout"]
 [connection signal="timeout" from="PowerUp2/Timer" to="PowerUp2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Contador nivel 3" to="." method="_on_contador_nivel_3_timeout"]
