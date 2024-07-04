@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr8ah0hf85cxd"]
+
+[ext_resource type="Texture2D" uid="uid://br0d47lr5u8eg" path="res://menu principal/combinaciones_puntajes_3.jpg" id="1_dddnt"]
+
+[node name="TutorialCombinaciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CombinacionesPuntajes3" type="Sprite2D" parent="."]
+position = Vector2(575.75, 395.25)
+scale = Vector2(0.599219, 0.706018)
+texture = ExtResource("1_dddnt")
