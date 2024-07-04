@@ -10,9 +10,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	#nivel1.rect_position = Vector(100, 200)
-
+	nivel1.position = Vector2(95, 374)
+	nivel2.position = Vector2(261, 70)
+	nivel3.position = Vector2(462, 378)
+	nivel4.position = Vector2(698, 84)
+	nivel5.position = Vector2(903, 392)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
