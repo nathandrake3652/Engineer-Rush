@@ -123,7 +123,7 @@ mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../CarHatchbackWheelFrontLeft")
 
 [node name="BuildingF" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.73639e-07, 0, 3.97241, 0, 3.97241, 0, -3.97241, 0, -1.73639e-07, -11.594, -0.288335, 11.551)
+transform = Transform3D(-1.73639e-07, 0, 3.97241, 0, 3.97241, 0, -3.97241, 0, -1.73639e-07, -11.594, -0.288335, 10.9563)
 mesh = ExtResource("6_mqb07")
 
 [node name="Streetlight" type="MeshInstance3D" parent="."]
@@ -135,11 +135,11 @@ transform = Transform3D(5.846, 0, 0, 0, 5.846, 0, 0, 0, 5.846, 7.97744, 0, 6.574
 mesh = ExtResource("7_u8oon")
 
 [node name="BuildingH" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.68073e-07, 0, 3.84507, 0, 3.84507, 0, -3.84507, 0, -1.68073e-07, -13.253, -0.267973, 20.6118)
+transform = Transform3D(-1.68073e-07, 0, 3.84507, 0, 3.84507, 0, -3.84507, 0, -1.68073e-07, -13.253, -0.281093, 20.0171)
 mesh = ExtResource("8_ewelk")
 
 [node name="Base" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.84347, -8.47597, 0, 20.6442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.84347, -8.47597, 0.0090003, 20.0266)
 mesh = ExtResource("9_eejoa")
 
 [node name="BuildingA" type="MeshInstance3D" parent="."]
@@ -167,34 +167,34 @@ mesh = ExtResource("7_u8oon")
 transform = Transform3D(5.846, 0, 0, 0, 5.846, 0, 0, 0, 5.846, 7.97744, 0, -9.43676)
 mesh = ExtResource("7_u8oon")
 
-[node name="bloque_0" type="StaticBody3D" parent="."]
+[node name="Green Car" type="StaticBody3D" parent="."]
 transform = Transform3D(1.33442, 0, 0, 0, 1.33442, 0, 0, 0, 1.33442, -3.71437, 0.5, -3.2356)
 metadata/Gameover = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="bloque_0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Green Car"]
 transform = Transform3D(4.41999, 0, 0, 0, 4.41999, 0, 0, 0, 4.41999, 0.0556448, -0.0781173, 0)
 mesh = ExtResource("13_kgui1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bloque_0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Green Car"]
 transform = Transform3D(0.673347, 0, 0, 0, 1.17001, 0, 0, 0, 3.72691, 0, 0.411016, 0)
 shape = SubResource("ConvexPolygonShape3D_04w11")
 
-[node name="CarHatchbackWheelFrontLeft" type="MeshInstance3D" parent="bloque_0"]
+[node name="CarHatchbackWheelFrontLeft" type="MeshInstance3D" parent="Green Car"]
 transform = Transform3D(4.23959, 0, 0, 0, 3.99104, 0, 0, 0, 3.93722, 0.111918, -0.0822008, 0.126063)
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../../..")
 
-[node name="CarHatchbackWheelFrontLeft2" type="MeshInstance3D" parent="bloque_0"]
+[node name="CarHatchbackWheelFrontLeft2" type="MeshInstance3D" parent="Green Car"]
 transform = Transform3D(3.64517, 0, 0, 0, 3.94994, 0, 0, 0, 3.96057, 0.219126, -0.0836016, -2.10695)
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../CarHatchbackWheelFrontLeft")
 
-[node name="CarHatchbackWheelFrontLeft3" type="MeshInstance3D" parent="bloque_0"]
+[node name="CarHatchbackWheelFrontLeft3" type="MeshInstance3D" parent="Green Car"]
 transform = Transform3D(-4.23959, 0, -2.69732e-07, 0, 3.99104, 0, 4.72966e-07, 0, -3.93722, 0.00182629, -0.100071, 2.05012)
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../../..")
 
-[node name="CarHatchbackWheelFrontLeft4" type="MeshInstance3D" parent="bloque_0"]
+[node name="CarHatchbackWheelFrontLeft4" type="MeshInstance3D" parent="Green Car"]
 transform = Transform3D(-3.64517, 0, -2.71331e-07, 0, 3.93184, 0, 4.06653e-07, 0, -3.96057, -0.103828, -0.0945925, -0.169871)
 mesh = ExtResource("5_30k0k")
 skeleton = NodePath("../CarHatchbackWheelFrontLeft")
@@ -211,20 +211,40 @@ mesh = ExtResource("14_dff3i")
 transform = Transform3D(0.689934, 0, 0, 0, 0.447542, 0, 0, 0, 0.454117, 0, 0.735311, 0)
 shape = SubResource("ConvexPolygonShape3D_g06vu")
 
+[node name="CarHatchbackWheelFrontLeft" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(5.6574, 0, 5.68434e-14, 0, 4.95984, 0, -2.84217e-14, 0, 5.26975, 0.498257, -0.109948, -0.0210066)
+mesh = ExtResource("5_30k0k")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft2" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(4.86419, 0, -1.13687e-12, 0, 4.94522, 0, -5.40012e-13, 0, 5.30101, 0.67048, -0.107901, -2.58757)
+mesh = ExtResource("5_30k0k")
+skeleton = NodePath("../CarHatchbackWheelFrontLeft")
+
+[node name="CarHatchbackWheelFrontLeft3" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(-5.65739, 0, -3.61023e-07, 0, 4.95984, 0, 6.31135e-07, 0, -5.26975, -0.500912, -0.109948, 2.5526)
+mesh = ExtResource("5_30k0k")
+skeleton = NodePath("../..")
+
+[node name="CarHatchbackWheelFrontLeft4" type="MeshInstance3D" parent="Taxi"]
+transform = Transform3D(-4.86419, 0, -3.63162e-07, 0, 4.94522, 0, 5.42646e-07, 0, -5.30101, -0.624154, -0.107901, -0.0251505)
+mesh = ExtResource("5_30k0k")
+skeleton = NodePath("../CarHatchbackWheelFrontLeft")
+
 [node name="BuildingE" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.47223e-07, 0, -3.36807, 0, 3.36807, 0, 3.36807, 0, -1.47223e-07, 11.3621, -0.258998, 4.81167)
 mesh = ExtResource("16_ehd03")
 
 [node name="BuildingG" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.61882e-07, 0, 3.70343, 0, 3.70343, 0, -3.70343, 0, -1.61882e-07, -11.2835, -0.241212, -14.4307)
+transform = Transform3D(-1.61882e-07, 0, 3.70343, 0, 3.70343, 0, -3.70343, 0, -1.61882e-07, -11.2835, -0.241212, -12.5047)
 mesh = ExtResource("17_txvvp")
 
 [node name="BuildingC" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.50901e-07, 0, 3.45221, 0, 3.45221, 0, -3.45221, 0, -1.50901e-07, -11.0334, -0.230738, -5.36223)
+transform = Transform3D(-1.50901e-07, 0, 3.45221, 0, 3.45221, 0, -3.45221, 0, -1.50901e-07, -11.0334, -0.230738, -4.47859)
 mesh = ExtResource("18_j0xae")
 
 [node name="BuildingB" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.35036e-07, 0, 3.08926, 0, 3.08926, 0, -3.08926, 0, -1.35036e-07, -10.6956, -0.196125, 2.61697)
+transform = Transform3D(-1.35036e-07, 0, 3.08926, 0, 3.08926, 0, -3.08926, 0, -1.35036e-07, -10.6956, -0.196125, 2.9705)
 mesh = ExtResource("19_xq546")
 
 [node name="BuildingH2" type="MeshInstance3D" parent="."]
@@ -318,5 +338,9 @@ skeleton = NodePath("../../Police Car/CarHatchbackWheelFrontLeft")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="BuildingB2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.35036e-07, 0, 3.08926, 0, 3.08926, 0, -3.08926, 0, -1.35036e-07, -10.6956, -0.196125, -20.1376)
+mesh = ExtResource("19_xq546")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
