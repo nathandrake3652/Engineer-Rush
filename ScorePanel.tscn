@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbwat4xe11hia"]
+
+[ext_resource type="Script" path="res://ScorePanelContainer.gd" id="2_sfrcv"]
+
+[node name="ScorePanel" type="Node2D"]
+
+[node name="ScorePanelContainer" type="Panel" parent="."]
+offset_right = 1153.0
+offset_bottom = 645.0
+script = ExtResource("2_sfrcv")
+
+[node name="Label" type="Label" parent="ScorePanelContainer"]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 87.0
+offset_right = 723.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 30
+text = "Tabla de puntuación"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="ScorePanelContainer"]
+
+[node name="CenterContainer" type="CenterContainer" parent="ScorePanelContainer"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 490.0
+offset_bottom = 240.0
+
+[node name="GridContainer" type="GridContainer" parent="ScorePanelContainer/CenterContainer"]
+layout_mode = 2
+columns = 3
