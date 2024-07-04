@@ -73,3 +73,5 @@ offset_left = 372.0
 offset_top = 495.0
 offset_right = 682.0
 offset_bottom = 571.0
+theme_override_font_sizes/font_size = 25
+text = "Menu Principal"
